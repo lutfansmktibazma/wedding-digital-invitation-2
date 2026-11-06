@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Walimatulurus Allesya & Haikal</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Cormorant+Garamond:ital,wght@1,500&family=Cormorant+SC:wght@500;600&family=Pinyon+Script&display=swap">
+<style>
+:root{--logo:url(images/logo.webp);--maroon:#6b1a2b;--ivory:#f7f1e8;--pink:#e8b4bc;--gold:#c9a24f;--ink:#2f3a35;--outside:#0b0809;box-sizing:border-box}
+*{box-sizing:border-box;margin:0}
+body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",Georgia,serif;font-weight:600;color:var(--ink)}
+.app{max-width:430px;margin:0 auto;background:var(--ivory);position:relative}
+.track{height:900svh;position:relative}
+.stage{position:sticky;top:0;height:100svh;overflow:hidden;background:#f3dcc0}
+#world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+#world img{position:absolute;display:block;user-select:none;-webkit-user-drag:none}
+#bg{left:0;top:0;width:100%;height:100%}
+#cp{will-change:opacity,top,left,width}
+#wl{position:absolute;left:40.4%;top:15%;width:19.2%;aspect-ratio:489/520;filter:drop-shadow(0 1px 1.5px rgba(90,50,10,.55)) drop-shadow(0 3px 6px rgba(90,50,10,.25));opacity:.96}
+.lg{background:var(--logo) center/contain no-repeat;display:block}
+/* hordeng maroon */
+.drape{position:absolute;top:0;bottom:0;width:57%;z-index:3;pointer-events:none;will-change:transform;background:#5a0713;overflow:hidden}
+.drape svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.drape::after{content:"";position:absolute;top:0;bottom:0;width:26px;background:linear-gradient(90deg,rgba(25,0,4,0),rgba(25,0,4,.4))}
+.drape.l{left:0;transform-origin:0 50%;clip-path:polygon(0 0,100% 0,98.5% 16%,95.5% 34%,93.5% 51%,95.5% 68%,98.5% 85%,100% 100%,0 100%)}
+.drape.l::after{right:0}
+.drape.r{right:0;transform-origin:100% 50%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,1.8% 84%,4.8% 66%,6.8% 47%,5% 30%,1.6% 14%)}
+.drape.r::after{left:0;transform:scaleX(-1)}
+/* teks */
+.tx{position:absolute;left:0;right:0;top:20%;z-index:4;padding:56px 26px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;
+ background:radial-gradient(ellipse closest-side at 50% 50%,rgba(255,255,255,.93),rgba(255,255,255,.7) 50%,rgba(255,255,255,0) 100%)}
+.tx.dark{background:none;color:var(--ivory)}
+.tx.full{top:0;bottom:0;justify-content:center}
+.lbl{font-size:17px;letter-spacing:.08em;line-height:1.2}
+.cap{font-size:14px;letter-spacing:.05em;line-height:1.35;max-width:310px}
+.date{font-size:20px;letter-spacing:.06em;line-height:1.25}
+.name{font-family:"Pinyon Script",cursive;font-weight:400;font-size:52px;line-height:1.02;color:var(--ink)}
+.name.m{font-size:46px}.name.s{font-size:30px;line-height:1.12}
+.amp{font-family:"Pinyon Script",cursive;font-weight:400;font-size:30px;line-height:1}
+.scr{font-family:"Pinyon Script",cursive;font-weight:400;font-size:25px;line-height:1.15;margin-top:8px}
+.ar{font-family:"Aref Ruqaa",serif;font-weight:400;font-size:28px;line-height:1.5}
+.ital{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:16px;line-height:1.4}
+.gap{height:8px}
+.hint{position:absolute;bottom:calc(5% + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;z-index:4;font-size:13px;letter-spacing:.2em;color:var(--ivory);animation:nudge 1.8s ease-in-out infinite;pointer-events:none}
+@keyframes nudge{50%{transform:translateY(6px)}}
+.btns{display:flex;gap:10px;justify-content:center;margin-top:6px}
+.btn,button{font-family:inherit;font-weight:600;letter-spacing:.14em;font-size:13px;background:var(--maroon);color:var(--ivory);border:1px solid var(--gold);padding:10px 20px;border-radius:40px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.cd{display:flex;justify-content:center;gap:8px;margin-top:8px}
+.cd div{width:56px;padding:6px 0;border:1px solid var(--gold);border-radius:3px;background:rgba(255,255,255,.7)}
+.cd b{display:block;font-size:20px;font-weight:600;color:var(--maroon)}.cd span{font-size:12px;letter-spacing:.08em}
+/* kehadiran */
+#rsvp{padding:80px 32px calc(72px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:20px;background:var(--ivory)}
+#rsvp h2{font-family:"Pinyon Script",cursive;font-weight:400;font-size:48px;line-height:1;color:#9a1b30}
+#rsvp .cap{color:var(--ink);font-size:15px;opacity:.85}
+.card2{width:100%;display:grid;gap:22px;text-align:left;margin-top:6px}
+.fld{display:grid;gap:4px;border:0;padding:0;min-width:0}
+.fld>span,.fld>legend{font-size:13px;letter-spacing:.14em;color:var(--ink);opacity:.65;padding:0}
+.fld>legend{margin-bottom:10px}
+input:not([type=radio]),select{font:inherit;font-size:17px;padding:8px 0;border:0;border-bottom:1px solid rgba(47,58,53,.35);border-radius:0;background:transparent;color:var(--ink);width:100%}
+input:not([type=radio]):focus,select:focus{outline:0;border-bottom-color:#9a1b30}
+.pills{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pills>div{position:relative}
+.pills input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.pills label{display:block;text-align:center;padding:11px 8px;border:1px solid rgba(47,58,53,.35);border-radius:2px;font-size:16px;letter-spacing:.08em;pointer-events:none}
+.pills input:checked+label{background:#9a1b30;border-color:#9a1b30;color:var(--ivory)}
+.pills input:focus-visible+label{outline:2px solid #9a1b30;outline-offset:3px}
+.step{display:flex;align-items:center;gap:22px;margin-top:4px}
+.step button{width:40px;height:40px;padding:0;border-radius:50%;font-size:20px;line-height:1;letter-spacing:0;background:transparent;color:var(--ink);border:1px solid rgba(47,58,53,.35)}
+.step output{min-width:28px;text-align:center;font-size:24px}
+.go{width:100%;padding:15px;font-size:15px;letter-spacing:.12em;background:#9a1b30;color:var(--ivory);border:0;border-radius:2px;margin-top:4px}
+.hub{font-family:"Pinyon Script",cursive;font-weight:400;font-size:32px;line-height:1;color:#9a1b30;margin-top:18px}
+.ct{width:100%}
+.ct a{display:flex;justify-content:space-between;align-items:baseline;color:inherit;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(47,58,53,.15);font-size:16px;letter-spacing:.1em}
+.ct a:first-child{border-top:1px solid rgba(47,58,53,.15)}
+.ct small{font-size:17px;letter-spacing:.05em;font-weight:500}
+.fin{display:grid;justify-items:center;gap:6px;margin-top:26px}
+.orn{display:flex;align-items:center;gap:8px;width:120px}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--gold)}
+.orn i{width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
+@media (prefers-reduced-motion:reduce){.hint{animation:none}}
+
+.sub{font-family:"Pinyon Script",cursive;font-weight:400;font-size:28px;line-height:1.15;color:var(--ink)}
+.foot{background:#f6f2ea;color:#8c857b;text-align:center;font-family:"Cormorant SC","Cormorant Garamond",Georgia,serif;font-weight:600;font-size:11.5px;letter-spacing:.05em;line-height:1.3;padding:8px 16px calc(8px + env(safe-area-inset-bottom,0px))}
+.btn.open{background:transparent;color:var(--ivory);border:1px solid var(--gold);padding:13px 30px;margin-top:26px;font-size:11px;letter-spacing:.24em}
+.btn.open:hover{background:rgba(255,255,255,.08)}
+#mus{position:absolute;right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:40px;height:40px;padding:0;border-radius:50%;z-index:6;display:grid;place-items:center;background:rgba(247,241,232,.82);border:1px solid rgba(154,27,48,.35);color:#7c1020;opacity:0;pointer-events:none;transition:opacity .6s}
+#mus.on{opacity:1;pointer-events:auto}
+#mus svg{width:20px;height:20px}
+#mus .x{display:none}#mus.off .w{display:none}#mus.off .x{display:block}
+#arrow{position:absolute;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:30px;height:34px;margin-left:-15px;z-index:6;pointer-events:none;color:#f7f1e8;transition:color .6s,opacity .3s;animation:bob 1.9s ease-in-out infinite}
+#arrow.dk{color:#7c1020;filter:drop-shadow(0 0 4px rgba(255,255,255,.9))}
+#arrow svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+@media (prefers-reduced-motion:reduce){#arrow{animation:none}}
+</style>
+</head>
+<body>
+<audio id="bgm" loop preload="auto" src="audio/bgm.mp3"></audio>
+<main class="app">
+<div class="track" id="track">
+<div class="stage" id="stage">
+ <div id="world">
+  <img id="bg" alt="Pelamin dengan sofa, tirai maroon dan bunga" src="images/bg.jpg">
+  <div class="lg" id="wl" role="img" aria-label="Monogram A dan H"></div>
+  <img id="cp" alt="Pasangan pengantin berjalan bergandengan tangan" src="images/couple.webp">
+ </div>
+ <div id="arrow" aria-hidden="true"><svg viewBox="0 0 24 28"><path d="M5 6l7 7 7-7"/><path d="M5 14l7 7 7-7" opacity=".55"/></svg></div>
+ <button type="button" id="mus" aria-label="Matikan musik" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path class="w" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/><path class="x" d="M16 9.5l5 5M21 9.5l-5 5"/></svg></button>
+ <div class="drape l" id="dl"></div><div class="drape r" id="dr"></div>
+ 
+ <!-- 0 cover -->
+ <div class="tx dark full">
+  <p class="lbl">Raikan Cinta</p>
+  <div class="lg" style="width:200px;height:212px;margin:10px 0 6px" role="img" aria-label="Monogram A dan H"></div>
+  <p class="date" style="font-size:18px">30 Disember 2026</p>
+  <button type="button" class="btn open" id="openBtn">Buka Undangan</button>
+ </div>
+ <!-- 1 pembuka -->
+ <div class="tx" style="top:20%">
+  <p class="lbl">Raikan Cinta</p>
+  <p class="name" style="margin-top:6px">Allesya</p><p class="amp">&amp;</p><p class="name">Haikal</p>
+  <p class="cap" style="margin-top:8px;font-size:15px">30 Dis 2026</p>
+ </div>
+ <!-- 2 jemputan -->
+ <div class="tx" style="top:14%">
+  <p class="ar">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+  <p class="cap">Bismillahirrahmanirrahim</p>
+  <p class="cap" style="margin-top:6px">Dengan penuh rasa syukur, kami</p>
+  <p class="sub">Badarudin bin Hussain<br>&amp; Zarina binti Awang Kechik</p>
+  <p class="cap">menjemput Dato’ / Datin / Tuan / Puan / Encik / Cik &amp; Sekeluarga ke Majlis Perkahwinan puteri kami</p>
+  <p class="name m" style="margin-top:6px">Allesya <span class="amp" style="font-size:26px">&amp;</span> Haikal</p>
+  <p class="cap" style="font-size:9.5px">Nur Allesya Irdina binti Mohamad Yusof<br>&amp; Haikal Aiman bin Rusli Nazir</p>
+ </div>
+ <!-- 3 butiran majlis -->
+ <div class="tx" style="top:11%">
+  <p class="scr" style="margin:0">Pada</p>
+  <p class="date">Rabu, 30 Disember 2026</p>
+  <p class="cap">20 Rejab 1448H<br>12:00 Tengah Hari – 5:00 Petang</p>
+  <p class="scr" style="margin-top:16px">Bertempat di</p>
+  <p class="cap" style="font-size:17px">Dewan Istiqlal</p>
+  <p class="cap">Masjid Tengku Sharafudin Badlishah<br>Pulau Kijang, 06300 Kuala Nerang, Kedah</p>
+  <p class="scr" style="margin-top:14px">Peta Lokasi</p>
+  <div class="btns">
+   <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dewan+Istiqlal+Masjid+Tengku+Sharafudin+Badlishah+Pulau+Kijang+Kuala+Nerang+Kedah">Google Maps</a>
+   <a class="btn" target="_blank" rel="noopener" href="https://waze.com/ul?q=Masjid+Tengku+Sharafudin+Badlishah+Pulau+Kijang+Kuala+Nerang&navigate=yes">Waze</a>
+  </div>
+  <div class="cd" id="cd"></div>
+ </div>
+ <!-- 4 doa -->
+ <div class="tx" style="top:15%">
+  <p class="name m" style="font-size:44px">Doa Buat Pengantin</p>
+  <div class="gap"></div>
+  <p class="cap">Ya Allah, Ya Rahman, Ya Rahim,<br>berkatilah perkahwinan ini, limpahkanlah rahmat dan kasih sayang-Mu kepada mereka, serta satukanlah hati mereka dalam kebaikan.</p>
+  <div class="gap"></div>
+  <p class="cap">Semoga rumah tangga yang dibina sentiasa dipenuhi sakinah, mawaddah dan rahmah, dimurahkan rezeki, dikurniakan zuriat yang soleh dan solehah, serta kekal bersama dalam cinta dan kebahagiaan hingga ke syurga.</p>
+  <p class="ital" style="margin-top:8px">Barakallahu laka wa baraka ‘alaika wa jama‘a bainakuma fii khair.</p>
+ </div>
+ <!-- 5 penutup (ulang pembuka) -->
+ <div class="tx" style="top:20%">
+  <p class="lbl">Raikan Cinta</p>
+  <p class="name" style="margin-top:6px">Allesya</p><p class="amp">&amp;</p><p class="name">Haikal</p>
+  <p class="cap" style="margin-top:8px;font-size:15px">30 Dis 2026</p>
+ </div>
+</div>
+</div>
+
+<footer class="foot">© 2026 ByLutfan. Hak Cipta Dilindungi.</footer>
+</main>
+
+<script>
+(function(){
+ var RW=941/1672,CR=.973;
+ var P=[{s:1,x:.5,y:.5},{s:1.04,x:.5,y:.56},{s:1.7,x:.5,y:.48},{s:1.25,x:.5,y:.55},{s:1.12,x:.5,y:.56},{s:1.04,x:.5,y:.56}];
+ var N=P.length,st=document.getElementById('stage'),wd=document.getElementById('world'),cp=document.getElementById('cp'),
+  tx=document.querySelectorAll('.tx'),dl=document.getElementById('dl'),dr=document.getElementById('dr'),
+  track=document.getElementById('track'),calm=matchMedia('(prefers-reduced-motion:reduce)').matches,
+  SW=0,SH=0,W=0,H=0,cur=0,tgt=0,openP=0,openDir=0,last=0,autoRAF=0;
+ function cl(v){return Math.max(0,Math.min(1,v))}
+ function ez(f){return f*f*(3-2*f)}
+ function io3(p){return p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2}
+ function lp(a,b,f){return a+(b-a)*f}
+ // hordeng: lipatan kain dengan lebar dan bayangan acak, sedikit melebar ke bawah
+ function drapeSVG(seed,flip,id){
+  var s=seed;function r(){s=(s*9301+49297)%233280;return s/233280}
+  var n=9,tp=[],bt=[],i,d='',g='',po='';
+  for(i=0;i<=n;i++){var j=(i>0&&i<n)?(r()-.5)*5:0;tp.push(i*100/n+j);bt.push(i*100/n+j+(i-n/2)*.7+((i>0&&i<n)?(r()-.5)*3:0))}
+  for(i=0;i<n;i++){
+   var h=.3+r()*.6,c1='rgb(52,3,12)',c2='rgb(104,9,26)',c3='rgb('+Math.round(128+h*52)+','+Math.round(16+h*34)+','+Math.round(30+h*30)+')';
+   g+='<linearGradient id="'+id+i+'" x1="0" x2="1"><stop offset="0" stop-color="'+c1+'"/><stop offset=".28" stop-color="'+c2+'"/><stop offset=".52" stop-color="'+c3+'"/><stop offset=".78" stop-color="'+c2+'"/><stop offset="1" stop-color="'+c1+'"/></linearGradient>';
+   po+='<polygon points="'+tp[i]+',0 '+tp[i+1]+',0 '+bt[i+1]+',100 '+bt[i]+',100" fill="url(#'+id+i+')"/>';
+  }
+  var m=19,th='';
+  g+='<linearGradient id="'+id+'t" x1="0" x2="1"><stop offset="0" stop-color="#1c0004" stop-opacity="0"/><stop offset=".5" stop-color="#1c0004" stop-opacity=".3"/><stop offset="1" stop-color="#1c0004" stop-opacity="0"/></linearGradient>';
+  g+='<linearGradient id="'+id+'v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c0004" stop-opacity=".42"/><stop offset=".22" stop-color="#1c0004" stop-opacity="0"/><stop offset=".82" stop-color="#1c0004" stop-opacity="0"/><stop offset="1" stop-color="#1c0004" stop-opacity=".3"/></linearGradient>';
+  for(i=0;i<m;i++){var x=i*100/m+(r()-.5)*3,w=2+r()*3.5;th+='<polygon points="'+x+',0 '+(x+w)+',0 '+(x+w+(i-m/2)*.35)+',100 '+(x+(i-m/2)*.35)+',100" fill="url(#'+id+'t)" opacity="'+(.35+r()*.5).toFixed(2)+'"/>'}
+  return '<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs>'+g+'</defs><g'+(flip?' transform="translate(100 0) scale(-1 1)"':'')+'><rect width="100" height="100" fill="#5a0713"/>'+po+th+'<rect width="100" height="100" fill="url(#'+id+'v)"/></g></svg>';
+ }
+ dl.innerHTML=drapeSVG(11,false,'dl');dr.innerHTML=drapeSVG(47,true,'dr');
+ function size(){SW=st.clientWidth;SH=st.clientHeight;H=SH;W=H*RW;if(W<SW){W=SW;H=W/RW}
+  wd.style.width=W+'px';wd.style.height=H+'px'}
+ function yFor(t){return t/(N-1)*(track.offsetHeight-innerHeight)}
+ function read(){var h=track.offsetHeight-innerHeight;tgt=cl(-track.getBoundingClientRect().top/h)*(N-1);
+  if(tgt>0.03&&!openDir){openDir=1;if(calm)openP=1;else autoScroll();playMusic()}
+  else if(tgt<0.012&&openDir){openDir=0;if(calm)openP=0}}
+ // geser otomatis halus ke adegan judul setelah hordeng mulai terbuka
+ function autoScroll(){
+  var y0=scrollY,y1=yFor(1);if(y0>=y1*0.9)return;
+  var t0=performance.now(),D=2300;cancelAnimationFrame(autoRAF);
+  function stop(){cancelAnimationFrame(autoRAF);removeEventListener('wheel',stop);removeEventListener('touchstart',stop);removeEventListener('keydown',stop)}
+  addEventListener('wheel',stop,{passive:true});addEventListener('touchstart',stop,{passive:true});addEventListener('keydown',stop);
+  (function stepA(n){var p=cl((n-t0)/D);scrollTo(0,y0+(y1-y0)*io3(p));if(p<1)autoRAF=requestAnimationFrame(stepA);else stop()})(t0);
+ }
+ function draw(t,c){
+  var i=Math.min(N-2,Math.floor(t)),f=ez(cl(t-i)),a=P[i],b=P[i+1];
+  var s=lp(a.s,b.s,f),fx=lp(a.x,b.x,f),fy=lp(a.y,b.y,f);
+  var x0=SW/2-fx*W*s,y0=SH/2-fy*H*s;
+  x0=Math.min(0,Math.max(SW-W*s,x0));y0=Math.min(0,Math.max(SH-H*s,y0));
+  wd.style.transform='translate3d('+x0.toFixed(1)+'px,'+y0.toFixed(1)+'px,0) scale('+s.toFixed(4)+')';
+  // hordeng: terkumpul ke tepi sambil bergoyang halus, lalu keluar layar
+  var k=1-.6*c,sk=Math.sin(Math.PI*c)*2.4;
+  dl.style.transform='translateX('+(-c*108).toFixed(2)+'%) skewX('+sk.toFixed(2)+'deg) scaleX('+k.toFixed(4)+')';
+  dr.style.transform='translateX('+(c*108).toFixed(2)+'%) skewX('+(-sk).toFixed(2)+'deg) scaleX('+k.toFixed(4)+')';
+  dl.style.visibility=dr.style.visibility=c>=.999?'hidden':'visible';
+  mus.className=(c>.6?'on':'')+(muted?' off':'');
+  arrow.style.opacity=1-cl((t-4.3)/0.5);arrow.className=c>.5?'dk':'';
+  var ap=cl((t-0.35)/0.95),a2=ez(ap),out=1-cl((t-2.55)/0.4),inn=cl((t-4.5)/0.4);
+  var hN=lp(.22,.37,a2),fyF=lp(.775,.93,a2),wN=CR*hN,bob=ap>0&&ap<1?Math.sin(ap*24)*.0035:0;
+  cp.style.width=(wN*100)+'%';cp.style.left=((.5-wN/2)*100)+'%';cp.style.top=((fyF-hN+bob)*100)+'%';
+  cp.style.opacity=t<4?a2*out:inn;
+  for(var j=0;j<tx.length;j++){
+   var d=Math.abs(t-j),op=j===0?1-cl(c*3.2):cl(1.7-d*3.2);
+   tx[j].style.opacity=op;
+   tx[j].style.transform='translateY('+(j===0?0:((t-j)*-24).toFixed(1))+'px)';
+   tx[j].style.pointerEvents=op>.5?'auto':'none';
+  }
+ }
+
+ var arrow=document.getElementById('arrow');
+ // ---- musik: fade in halus, volume tetap pelan, loop mulus ----
+ var bgm=document.getElementById('bgm'),mus=document.getElementById('mus'),mv=0,mT=0,muted=false,wantPlay=false;
+ function playMusic(){if(muted)return;wantPlay=true;mT=1;var p=bgm.play();if(p&&p.catch)p.catch(function(){armGesture()})}
+ function armGesture(){function go(){['pointerup','touchend','click','keydown'].forEach(function(e){removeEventListener(e,go,true)});if(wantPlay&&!muted){mT=1;bgm.play().catch(function(){})}}
+  ['pointerup','touchend','click','keydown'].forEach(function(e){addEventListener(e,go,true)})}
+ function fadeStep(dt){var sp=mT>mv?dt/3.2:dt/.6;mv=mT>mv?Math.min(mT,mv+sp):Math.max(mT,mv-sp);try{bgm.volume=mv}catch(e){}
+  if(mv===0&&mT===0&&!bgm.paused)bgm.pause()}
+ document.addEventListener('visibilitychange',function(){if(document.hidden){bgm.pause()}else if(wantPlay&&!muted){bgm.play().catch(function(){})}});
+ mus.onclick=function(){muted=!muted;mus.setAttribute('aria-pressed',String(!muted));mus.setAttribute('aria-label',muted?'Hidupkan musik':'Matikan musik');if(muted){mT=0}else{playMusic()}};
+ document.getElementById('openBtn').onclick=function(){playMusic();if(!openDir){openDir=1;if(calm)openP=1;else autoScroll()}};
+ function loop(ts){
+  var dt=last?Math.min(.05,(ts-last)/1000):0;last=ts;
+  fadeStep(dt);
+  if(!calm){openP=cl(openP+(openDir?1:-1)*dt/1.9)}else openP=openDir?1:0;
+  cur=calm?tgt:cur+(tgt-cur)*0.12;if(Math.abs(tgt-cur)<.0005)cur=tgt;
+  draw(cur,io3(openP));requestAnimationFrame(loop)}
+ addEventListener('scroll',read,{passive:true});
+ addEventListener('resize',function(){size();read()});
+ size();read();if(openDir)openP=1;cur=tgt;draw(cur,io3(openP));requestAnimationFrame(loop);
+
+ var t0=new Date('2026-12-30T12:00:00+08:00').getTime(),cd=document.getElementById('cd');
+ function tick(){var d=t0-Date.now();if(d<=0){cd.innerHTML='';return}
+  var v=[[Math.floor(d/864e5),'hari'],[Math.floor(d%864e5/36e5),'jam'],[Math.floor(d%36e5/6e4),'minit'],[Math.floor(d%6e4/1e3),'saat']];
+  cd.innerHTML=v.map(function(a){return '<div><b>'+a[0]+'</b><span>'+a[1]+'</span></div>'}).join('')}
+ tick();setInterval(tick,1000);
+
+ })();
+</script>
+</body>
+</html>
