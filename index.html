@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Walimatulurus Allesya & Haikal</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Cormorant+Garamond:ital,wght@1,500&family=Cormorant+SC:wght@500;600&family=Pinyon+Script&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cormorant+SC:wght@400;500;600;700&display=swap">
 <style>
 :root{--logo:url(images/logo.webp);--maroon:#6b1a2b;--ivory:#f7f1e8;--pink:#e8b4bc;--gold:#c9a24f;--ink:#2f3a35;--outside:#0b0809;box-sizing:border-box}
 *{box-sizing:border-box;margin:0}
@@ -27,62 +29,50 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 .drape.r{right:0;transform-origin:100% 50%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,1.8% 84%,4.8% 66%,6.8% 47%,5% 30%,1.6% 14%)}
 .drape.r::after{left:0;transform:scaleX(-1)}
 /* teks */
-.tx{position:absolute;left:0;right:0;top:20%;z-index:4;padding:56px 26px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;
- background:radial-gradient(ellipse closest-side at 50% 50%,rgba(255,255,255,.93),rgba(255,255,255,.7) 50%,rgba(255,255,255,0) 100%)}
+.tx{position:absolute;left:0;right:0;top:20%;z-index:4;padding:40px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;
+ background:radial-gradient(ellipse closest-side at 50% 50%,rgba(255,255,255,.95),rgba(255,255,255,.78) 55%,rgba(255,255,255,0) 100%)}
 .tx.dark{background:none;color:var(--ivory)}
 .tx.full{top:0;bottom:0;justify-content:center}
-.lbl{font-size:17px;letter-spacing:.08em;line-height:1.2}
-.cap{font-size:14px;letter-spacing:.05em;line-height:1.35;max-width:310px}
-.date{font-size:20px;letter-spacing:.06em;line-height:1.25}
-.name{font-family:"Pinyon Script",cursive;font-weight:400;font-size:52px;line-height:1.02;color:var(--ink)}
-.name.m{font-size:46px}.name.s{font-size:30px;line-height:1.12}
-.amp{font-family:"Pinyon Script",cursive;font-weight:400;font-size:30px;line-height:1}
-.scr{font-family:"Pinyon Script",cursive;font-weight:400;font-size:25px;line-height:1.15;margin-top:8px}
-.ar{font-family:"Aref Ruqaa",serif;font-weight:400;font-size:28px;line-height:1.5}
-.ital{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:16px;line-height:1.4}
-.gap{height:8px}
-.hint{position:absolute;bottom:calc(5% + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;z-index:4;font-size:13px;letter-spacing:.2em;color:var(--ivory);animation:nudge 1.8s ease-in-out infinite;pointer-events:none}
-@keyframes nudge{50%{transform:translateY(6px)}}
-.btns{display:flex;gap:10px;justify-content:center;margin-top:6px}
-.btn,button{font-family:inherit;font-weight:600;letter-spacing:.14em;font-size:13px;background:var(--maroon);color:var(--ivory);border:1px solid var(--gold);padding:10px 20px;border-radius:40px;cursor:pointer;text-decoration:none;display:inline-block}
-.btn:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.cd{display:flex;justify-content:center;gap:8px;margin-top:8px}
-.cd div{width:56px;padding:6px 0;border:1px solid var(--gold);border-radius:3px;background:rgba(255,255,255,.7)}
-.cd b{display:block;font-size:20px;font-weight:600;color:var(--maroon)}.cd span{font-size:12px;letter-spacing:.08em}
-/* kehadiran */
-#rsvp{padding:80px 32px calc(72px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:20px;background:var(--ivory)}
-#rsvp h2{font-family:"Pinyon Script",cursive;font-weight:400;font-size:48px;line-height:1;color:#9a1b30}
-#rsvp .cap{color:var(--ink);font-size:15px;opacity:.85}
-.card2{width:100%;display:grid;gap:22px;text-align:left;margin-top:6px}
-.fld{display:grid;gap:4px;border:0;padding:0;min-width:0}
-.fld>span,.fld>legend{font-size:13px;letter-spacing:.14em;color:var(--ink);opacity:.65;padding:0}
-.fld>legend{margin-bottom:10px}
-input:not([type=radio]),select{font:inherit;font-size:17px;padding:8px 0;border:0;border-bottom:1px solid rgba(47,58,53,.35);border-radius:0;background:transparent;color:var(--ink);width:100%}
-input:not([type=radio]):focus,select:focus{outline:0;border-bottom-color:#9a1b30}
-.pills{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.pills>div{position:relative}
-.pills input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
-.pills label{display:block;text-align:center;padding:11px 8px;border:1px solid rgba(47,58,53,.35);border-radius:2px;font-size:16px;letter-spacing:.08em;pointer-events:none}
-.pills input:checked+label{background:#9a1b30;border-color:#9a1b30;color:var(--ivory)}
-.pills input:focus-visible+label{outline:2px solid #9a1b30;outline-offset:3px}
-.step{display:flex;align-items:center;gap:22px;margin-top:4px}
-.step button{width:40px;height:40px;padding:0;border-radius:50%;font-size:20px;line-height:1;letter-spacing:0;background:transparent;color:var(--ink);border:1px solid rgba(47,58,53,.35)}
-.step output{min-width:28px;text-align:center;font-size:24px}
-.go{width:100%;padding:15px;font-size:15px;letter-spacing:.12em;background:#9a1b30;color:var(--ivory);border:0;border-radius:2px;margin-top:4px}
-.hub{font-family:"Pinyon Script",cursive;font-weight:400;font-size:32px;line-height:1;color:#9a1b30;margin-top:18px}
-.ct{width:100%}
-.ct a{display:flex;justify-content:space-between;align-items:baseline;color:inherit;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(47,58,53,.15);font-size:16px;letter-spacing:.1em}
-.ct a:first-child{border-top:1px solid rgba(47,58,53,.15)}
-.ct small{font-size:17px;letter-spacing:.05em;font-weight:500}
-.fin{display:grid;justify-items:center;gap:6px;margin-top:26px}
-.orn{display:flex;align-items:center;gap:8px;width:120px}
-.orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--gold)}
-.orn i{width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
-@media (prefers-reduced-motion:reduce){.hint{animation:none}}
 
-.sub{font-family:"Pinyon Script",cursive;font-weight:400;font-size:28px;line-height:1.15;color:var(--ink)}
+/* Scene 1 & 5: Pembuka */
+.sc-sub{font-family:"Cormorant SC",Georgia,serif;font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:#2f3a35;font-weight:600;line-height:1.2}
+.name-hero{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:52px;line-height:.95;letter-spacing:.04em;color:#2f3a35;font-weight:600}
+.amp-hero{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:26px;line-height:1.2;color:#2f3a35;margin:3px 0}
+.date-hero{font-family:"Cormorant Garamond",Georgia,serif;font-size:17px;letter-spacing:.09em;color:#2f3a35;font-weight:500;line-height:1.2}
+
+/* Scene 2: Jemputan */
+.ar{font-family:"Amiri","Aref Ruqaa",serif;font-size:28px;line-height:1.45;color:#2f3a35;margin-bottom:2px}
+.sc-cap{font-family:"Cormorant SC",Georgia,serif;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#352b2e;font-weight:600;line-height:1.2}
+.sc-body{font-family:"Cormorant SC",Georgia,serif;font-size:12.5px;line-height:1.55;letter-spacing:.11em;text-transform:uppercase;color:#352b2e;font-weight:600}
+.name-inline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:36px;line-height:1;letter-spacing:.04em;color:#2f3a35;font-weight:600;white-space:nowrap}
+.amp-inline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:28px;font-weight:400}
+
+/* Scene 3: Butiran Majlis */
+.it-label{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:22px;color:#2f3a35;font-weight:500;line-height:1.2}
+.date-large{font-family:"Cormorant Garamond",Georgia,serif;font-size:23px;letter-spacing:.03em;color:#2f3a35;font-weight:600;line-height:1.25}
+.sc-time{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.55;letter-spacing:.09em;text-transform:uppercase;color:#352b2e;font-weight:600}
+.venue-title{font-family:"Cormorant SC",Georgia,serif;font-size:19px;letter-spacing:.08em;text-transform:uppercase;color:#2f3a35;font-weight:700;line-height:1.2}
+.sc-venue{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.55;letter-spacing:.08em;text-transform:uppercase;color:#352b2e;font-weight:600;max-width:320px}
+
+/* Scene 4: Doa */
+.doa-title{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:36px;letter-spacing:.03em;color:#2b2627;font-weight:600;line-height:1.1}
+.doa-body{font-family:"Cormorant SC",Georgia,serif;font-size:12.5px;line-height:1.6;letter-spacing:.09em;text-transform:uppercase;color:#382e32;font-weight:600;max-width:340px}
+.doa-latin{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:15px;line-height:1.45;color:#7c1a2c;font-weight:600;letter-spacing:.02em}
+
+.gap{height:10px}
+.btns{display:flex;gap:14px;justify-content:center;margin-top:8px}
+.btn{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;letter-spacing:.06em;font-size:15px;background:#5a0713;color:#f7f1e8;border:none;padding:7px 22px;border-radius:30px;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 2px 6px rgba(90,7,19,.2);transition:transform .2s,background .2s}
+.btn:hover{background:#6f0c1b;transform:translateY(-1px)}
+.btn:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* Countdown cards */
+.cd{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.cd div{width:56px;padding:8px 4px 6px;border:1px solid rgba(196,178,154,.75);border-radius:2px;background:rgba(251,248,243,.85);box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.cd b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;color:#6b1a2b;line-height:1}
+.cd span{display:block;font-family:"Cormorant SC",Georgia,serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#4a403b;margin-top:4px;font-weight:600}
+
 .foot{background:#f6f2ea;color:#8c857b;text-align:center;font-family:"Cormorant SC","Cormorant Garamond",Georgia,serif;font-weight:600;font-size:11.5px;letter-spacing:.05em;line-height:1.3;padding:8px 16px calc(8px + env(safe-area-inset-bottom,0px))}
-.btn.open{background:transparent;color:var(--ivory);border:1px solid var(--gold);padding:13px 30px;margin-top:26px;font-size:11px;letter-spacing:.24em}
+.btn.open{background:transparent;color:var(--ivory);border:1px solid var(--gold);padding:13px 30px;margin-top:26px;font-family:"Cormorant SC",Georgia,serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
 .btn.open:hover{background:rgba(255,255,255,.08)}
 #mus{position:absolute;right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:40px;height:40px;padding:0;border-radius:50%;z-index:6;display:grid;place-items:center;background:rgba(247,241,232,.82);border:1px solid rgba(154,27,48,.35);color:#7c1020;opacity:0;pointer-events:none;transition:opacity .6s}
 #mus.on{opacity:1;pointer-events:auto}
@@ -93,48 +83,10 @@ input:not([type=radio]):focus,select:focus{outline:0;border-bottom-color:#9a1b30
 #arrow svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
 @media (prefers-reduced-motion:reduce){#arrow{animation:none}}
-
-/* ---- Desktop Side Layout (Sisi Kiri di Desktop) ---- */
-.desktop-side{display:none}
-@media (min-width:992px){
- body{background:radial-gradient(circle at 25% 45%,#230810 0%,#110307 55%,#050102 100%);min-height:100vh;overflow-x:hidden}
- .desktop-side{display:flex;position:fixed;top:0;left:0;width:calc(100vw - 440px);height:100vh;flex-direction:column;justify-content:space-between;align-items:center;padding:7vh 40px 6vh;text-align:center;z-index:2;color:var(--ivory);pointer-events:none;box-sizing:border-box}
- .desktop-head{display:flex;flex-direction:column;align-items:center;gap:12px}
- .desktop-head .lg{width:90px;height:96px;filter:drop-shadow(0 2px 10px rgba(0,0,0,.5))}
- .desktop-tag{font-size:13px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
- .desktop-main{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:540px}
- .desktop-title{font-family:"Pinyon Script",cursive;font-size:clamp(54px,5.8vw,86px);line-height:1.05;font-weight:400;color:#fff8f0;text-shadow:0 4px 24px rgba(0,0,0,.6)}
- .desktop-date{font-size:20px;letter-spacing:.14em;color:var(--gold)}
- .desktop-venue{font-size:15px;letter-spacing:.08em;color:rgba(247,241,232,.85);line-height:1.6;max-width:440px}
- .desktop-foot{display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(247,241,232,.65);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
- .desktop-mouse{width:22px;height:36px;border:1.5px solid var(--gold);border-radius:12px;position:relative;opacity:.8}
- .desktop-mouse::before{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:3px;height:6px;background:var(--gold);border-radius:2px;animation:mouseWheel 1.8s infinite}
- @keyframes mouseWheel{0%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,14px)}}
- .app{margin:0 0 0 auto !important;width:440px;max-width:440px;box-shadow:-20px 0 60px rgba(0,0,0,.85),-1px 0 0 rgba(201,162,79,.3)}
-}
 </style>
 </head>
 <body>
 <audio id="bgm" loop preload="auto" src="audio/bgm.mp3"></audio>
-
-<!-- Sisi Kiri untuk Tampilan Desktop -->
-<aside class="desktop-side" aria-hidden="true">
- <div class="desktop-head">
-  <div class="lg" role="img" aria-label="Monogram A dan H"></div>
-  <p class="desktop-tag">Walimatulurus</p>
- </div>
- <div class="desktop-main">
-  <h1 class="desktop-title">Allesya &amp; Haikal</h1>
-  <div class="orn"><i></i></div>
-  <p class="desktop-date">Rabu, 30 Disember 2026</p>
-  <p class="desktop-venue">Dewan Istiqlal, Masjid Tengku Sharafudin Badlishah<br>Pulau Kijang, Kuala Nerang, Kedah</p>
- </div>
- <div class="desktop-foot">
-  <div class="desktop-mouse"></div>
-  <span>Gunakan Skrol Tetikus</span>
- </div>
-</aside>
-
 <main class="app">
 <div class="track" id="track">
 <div class="stage" id="stage">
@@ -149,36 +101,37 @@ input:not([type=radio]):focus,select:focus{outline:0;border-bottom-color:#9a1b30
  
  <!-- 0 cover -->
  <div class="tx dark full">
-  <p class="lbl">Raikan Cinta</p>
+  <p class="sc-sub" style="color:var(--ivory); letter-spacing:.24em">Raikan Cinta</p>
   <div class="lg" style="width:200px;height:212px;margin:10px 0 6px" role="img" aria-label="Monogram A dan H"></div>
-  <p class="date" style="font-size:18px">30 Disember 2026</p>
+  <p class="date-hero" style="font-size:18px; color:var(--ivory); letter-spacing:.12em">30 Disember 2026</p>
   <button type="button" class="btn open" id="openBtn">Buka Undangan</button>
  </div>
  <!-- 1 pembuka -->
- <div class="tx" style="top:20%">
-  <p class="lbl">Raikan Cinta</p>
-  <p class="name" style="margin-top:6px">Allesya</p><p class="amp">&amp;</p><p class="name">Haikal</p>
-  <p class="cap" style="margin-top:8px;font-size:15px">30 Dis 2026</p>
+ <div class="tx" style="top:19%">
+  <p class="sc-sub">Raikan Cinta</p>
+  <p class="name-hero" style="margin-top:14px">Allesya</p>
+  <p class="amp-hero">&amp;</p>
+  <p class="name-hero">Haikal</p>
+  <p class="date-hero" style="margin-top:14px">30 Dis 2026</p>
  </div>
  <!-- 2 jemputan -->
- <div class="tx" style="top:14%">
-  <p class="ar">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
-  <p class="cap">Bismillahirrahmanirrahim</p>
-  <p class="cap" style="margin-top:6px">Dengan penuh rasa syukur, kami</p>
-  <p class="sub">Badarudin bin Hussain<br>&amp; Zarina binti Awang Kechik</p>
-  <p class="cap">menjemput Dato’ / Datin / Tuan / Puan / Encik / Cik &amp; Sekeluarga ke Majlis Perkahwinan puteri kami</p>
-  <p class="name m" style="margin-top:6px">Allesya <span class="amp" style="font-size:26px">&amp;</span> Haikal</p>
-  <p class="cap" style="font-size:9.5px">Nur Allesya Irdina binti Mohamad Yusof<br>&amp; Haikal Aiman bin Rusli Nazir</p>
+ <div class="tx" style="top:12%">
+  <p class="ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
+  <p class="sc-cap" style="margin-bottom:12px">Bismillahirrahmanirrahim</p>
+  <p class="sc-body">Dengan penuh rasa syukur,<br>kami ingin menjemput</p>
+  <p class="sc-body" style="margin-top:8px">Dato’ / Datin / Tuan / Puan / Encik / Cik<br>&amp; Sekeluarga ke</p>
+  <p class="sc-body" style="margin-top:8px">Majlis Perkahwinan<br>Anakanda Kami</p>
+  <p class="name-inline" style="margin-top:14px">Allesya <span class="amp-inline">&amp;</span> Haikal</p>
  </div>
  <!-- 3 butiran majlis -->
- <div class="tx" style="top:11%">
-  <p class="scr" style="margin:0">Pada</p>
-  <p class="date">Rabu, 30 Disember 2026</p>
-  <p class="cap">20 Rejab 1448H<br>12:00 Tengah Hari – 5:00 Petang</p>
-  <p class="scr" style="margin-top:16px">Bertempat di</p>
-  <p class="cap" style="font-size:17px">Dewan Istiqlal</p>
-  <p class="cap">Masjid Tengku Sharafudin Badlishah<br>Pulau Kijang, 06300 Kuala Nerang, Kedah</p>
-  <p class="scr" style="margin-top:14px">Peta Lokasi</p>
+ <div class="tx" style="top:10%">
+  <p class="it-label">Pada</p>
+  <p class="date-large" style="margin-top:4px">Rabu, 30 Disember 2026</p>
+  <p class="sc-time" style="margin-top:4px">20 Rejab 1448H<br>12:00 Tengah Hari – 5:00 Petang</p>
+  <p class="it-label" style="margin-top:14px">Bertempat di</p>
+  <p class="venue-title" style="margin-top:4px">Dewan Istiqlal</p>
+  <p class="sc-venue" style="margin-top:4px">Masjid Tengku Sharafudin Badlishah<br>Pulau Kijang, 06300 Kuala Nerang, Kedah</p>
+  <p class="it-label" style="margin-top:14px">Peta Lokasi</p>
   <div class="btns">
    <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dewan+Istiqlal+Masjid+Tengku+Sharafudin+Badlishah+Pulau+Kijang+Kuala+Nerang+Kedah">Google Maps</a>
    <a class="btn" target="_blank" rel="noopener" href="https://waze.com/ul?q=Masjid+Tengku+Sharafudin+Badlishah+Pulau+Kijang+Kuala+Nerang&navigate=yes">Waze</a>
@@ -186,19 +139,22 @@ input:not([type=radio]):focus,select:focus{outline:0;border-bottom-color:#9a1b30
   <div class="cd" id="cd"></div>
  </div>
  <!-- 4 doa -->
- <div class="tx" style="top:15%">
-  <p class="name m" style="font-size:44px">Doa Buat Pengantin</p>
-  <div class="gap"></div>
-  <p class="cap">Ya Allah, Ya Rahman, Ya Rahim,<br>berkatilah perkahwinan ini, limpahkanlah rahmat dan kasih sayang-Mu kepada mereka, serta satukanlah hati mereka dalam kebaikan.</p>
-  <div class="gap"></div>
-  <p class="cap">Semoga rumah tangga yang dibina sentiasa dipenuhi sakinah, mawaddah dan rahmah, dimurahkan rezeki, dikurniakan zuriat yang soleh dan solehah, serta kekal bersama dalam cinta dan kebahagiaan hingga ke syurga.</p>
-  <p class="ital" style="margin-top:8px">Barakallahu laka wa baraka ‘alaika wa jama‘a bainakuma fii khair.</p>
+ <div class="tx" style="top:14%">
+  <p class="doa-title">Doa Buat Pengantin</p>
+  <div class="gap" style="height:12px"></div>
+  <p class="doa-body">Ya Allah, Ya Rahman, Ya Rahim,<br>berkatilah perkahwinan ini, limpahkanlah<br>rahmat dan kasih sayang-Mu kepada mereka,<br>serta satukanlah hati mereka dalam kebaikan.</p>
+  <div class="gap" style="height:10px"></div>
+  <p class="doa-body">Semoga rumah tangga yang dibina sentiasa<br>dipenuhi sakinah, mawaddah dan rahmah,<br>dimurahkan rezeki, dikurniakan zuriat yang<br>soleh dan solehah, serta kekal bersama dalam<br>cinta dan kebahagiaan hingga ke syurga.</p>
+  <div class="gap" style="height:12px"></div>
+  <p class="doa-latin">Barakallahu laka wa baraka ‘alaika wa jama‘a<br>bainakuma fii khair.</p>
  </div>
  <!-- 5 penutup (ulang pembuka) -->
- <div class="tx" style="top:20%">
-  <p class="lbl">Raikan Cinta</p>
-  <p class="name" style="margin-top:6px">Allesya</p><p class="amp">&amp;</p><p class="name">Haikal</p>
-  <p class="cap" style="margin-top:8px;font-size:15px">30 Dis 2026</p>
+ <div class="tx" style="top:19%">
+  <p class="sc-sub">Raikan Cinta</p>
+  <p class="name-hero" style="margin-top:14px">Allesya</p>
+  <p class="amp-hero">&amp;</p>
+  <p class="name-hero">Haikal</p>
+  <p class="date-hero" style="margin-top:14px">30 Dis 2026</p>
  </div>
 </div>
 </div>
