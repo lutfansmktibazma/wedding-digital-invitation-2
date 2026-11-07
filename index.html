@@ -108,7 +108,7 @@ body{background:var(--outside);margin:0;padding:0;min-height:100%;font-family:"C
   <p class="desk-date">30 . 12 . 2026</p>
  </div>
 </aside>
-<audio id="bgm" loop preload="none" src="audio/bgm.mp3"></audio>
+<audio id="bgm" loop preload="auto" src="audio/bgm.mp3"></audio>
 <main class="app">
 <div class="track" id="track">
 <div class="stage" id="stage">
@@ -264,15 +264,15 @@ body{background:var(--outside);margin:0;padding:0;min-height:100%;font-family:"C
 
  // ---- musik: fade in halus, volume tetap pelan, loop mulus ----
  var bgm=document.getElementById('bgm'),mus=document.getElementById('mus'),mv=0,mT=0,muted=false,wantPlay=false;
- function playMusic(){if(muted)return;wantPlay=true;mT=1;var p=bgm.play();if(p&&p.catch)p.catch(function(){armGesture()})}
- function armGesture(){function go(){['pointerup','touchend','click','keydown'].forEach(function(e){removeEventListener(e,go,true)});if(wantPlay&&!muted){mT=1;bgm.play().catch(function(){})}}
+ function playMusic(){if(muted)return;wantPlay=true;mT=1;if(mv===0){mv=0.35;try{bgm.volume=mv}catch(e){}}var p=bgm.play();if(p&&p.catch)p.catch(function(){armGesture()})}
+ function armGesture(){function go(){['pointerup','touchend','click','keydown'].forEach(function(e){removeEventListener(e,go,true)});if(wantPlay&&!muted){mT=1;if(mv===0){mv=0.35;try{bgm.volume=mv}catch(e){}}bgm.play().catch(function(){})}}
   ['pointerup','touchend','click','keydown'].forEach(function(e){addEventListener(e,go,true)})}
- function fadeStep(dt){var sp=mT>mv?dt/3.2:dt/.6;mv=mT>mv?Math.min(mT,mv+sp):Math.max(mT,mv-sp);try{bgm.volume=mv}catch(e){}
+ function fadeStep(dt){var sp=mT>mv?dt/1.2:dt/.6;mv=mT>mv?Math.min(mT,mv+sp):Math.max(mT,mv-sp);try{bgm.volume=mv}catch(e){}
   if(mv===0&&mT===0&&!bgm.paused)bgm.pause()}
  document.addEventListener('visibilitychange',function(){if(document.hidden){bgm.pause()}else if(wantPlay&&!muted){bgm.play().catch(function(){})}});
  mus.onclick=function(){muted=!muted;mus.setAttribute('aria-pressed',String(!muted));mus.setAttribute('aria-label',muted?'Hidupkan musik':'Matikan musik');if(muted){mT=0}else{playMusic()}};
- // Buka tirai dengan sentuhan/scroll, tanpa button
- st.addEventListener('click',function(){if(!openDir){openDir=1;if(calm)openP=1;else autoScroll();playMusic()}},{once:true});
+ // Buka tirai dengan sentuhan/klik di mana saja, tanpa button
+ document.addEventListener('click',function(){if(!openDir){openDir=1;if(calm)openP=1;else autoScroll();playMusic()}},{once:true});
  function loop(ts){
   var dt=last?Math.min(.05,(ts-last)/1000):0;last=ts;
   fadeStep(dt);
