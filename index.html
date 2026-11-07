@@ -157,7 +157,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 (function(){
  var RW=941/1672,CR=.973;
  var P=[{s:1,x:.5,y:.5},{s:1.04,x:.5,y:.56},{s:1.7,x:.5,y:.48},{s:1.25,x:.5,y:.55},{s:1.12,x:.5,y:.56},{s:1.04,x:.5,y:.56}];
- var N=P.length,st=document.getElementById('stage'),wd=document.getElementById('world'),cp=document.getElementById('cp'),
+ var N=P.length,st=document.getElementById('stage'),wd=document.getElementById('world'),cp=document.getElementById('cp'),wl=document.getElementById('wl'),
   tx=document.querySelectorAll('.tx'),dl=document.getElementById('dl'),dr=document.getElementById('dr'),
   arrow=document.getElementById('arrow'),hint=document.getElementById('hint'),
   track=document.getElementById('track'),calm=matchMedia('(prefers-reduced-motion:reduce)').matches,
@@ -217,6 +217,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   var hN=lp(.22,.37,a2),fyF=lp(.775,.875,a2),wN=CR*hN,bob=ap>0&&ap<1?Math.sin(ap*24)*.0035:0;
   cp.style.width=(wN*100)+'%';cp.style.left=((.5-wN/2)*100)+'%';cp.style.top=((fyF-hN+bob)*100)+'%';
   cp.style.opacity=t<4?a2*out:inn;
+  wl.style.opacity=t<2?0.96:(t<2.5?0.96*(1-(t-2)/0.5):(t>4.5?0.96*cl((t-4.5)/0.5):0));
   for(var j=0;j<tx.length;j++){
     var d=Math.abs(t-j);
     var rawOp=j===0?1-cl(c*2.8):cl(1.6-d*2.6);
