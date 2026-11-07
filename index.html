@@ -119,7 +119,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   <p class="name m" style="margin-top:12px">Allesya <span class="amp-inline">&amp;</span> Haikal</p>
  </div>
  <!-- 3 butiran majlis -->
- <div class="tx card-glow" style="top:10%">
+ <div class="tx card-glow" style="top:17%">
   <p class="pada">Pada</p>
   <p class="date-main" style="margin-top:2px">Rabu, 30 Disember 2026</p>
   <p class="cap" style="margin-top:3px">20 Rejab 1448H<br>12:00 Tengah Hari – 5:00 Petang</p>
@@ -134,7 +134,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   <div class="cd" id="cd"></div>
  </div>
  <!-- 4 doa -->
- <div class="tx card-glow" style="top:13%">
+ <div class="tx card-glow" style="top:18%">
   <p class="doa-title">Doa Buat Pengantin</p>
   <p class="cap" style="margin-top:14px">Ya Allah, Ya Rahman, Ya Rahim,<br>berkatilah perkahwinan ini, limpahkanlah<br>rahmat dan kasih sayang-Mu kepada mereka,<br>serta satukanlah hati mereka dalam kebaikan.</p>
   <p class="cap" style="margin-top:12px">Semoga rumah tangga yang dibina sentiasa<br>dipenuhi sakinah, mawaddah dan rahmah,<br>dimurahkan rezeki, dikurniakan zuriat yang<br>soleh dan solehah, serta kekal bersama dalam<br>cinta dan kebahagiaan hingga ke syurga.</p>
@@ -218,7 +218,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   var hN=lp(.22,.37,a2),fyF=lp(.775,.875,a2),wN=CR*hN,bob=ap>0&&ap<1?Math.sin(ap*24)*.0035:0;
   cp.style.width=(wN*100)+'%';cp.style.left=((.5-wN/2)*100)+'%';cp.style.top=((fyF-hN+bob)*100)+'%';
   cp.style.opacity=t<4?a2*out:inn;
-  wl.style.opacity=t<2?0.96:(t<2.5?0.96*(1-(t-2)/0.5):(t>4.5?0.96*cl((t-4.5)/0.5):0));
+  wl.style.opacity=0.96;
   for(var j=0;j<tx.length;j++){
     var d=Math.abs(t-j);
     var rawOp=j===0?1-cl(c*2.8):cl(1.8-d*2.8);
