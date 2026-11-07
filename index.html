@@ -66,7 +66,9 @@ body{background:var(--outside);font-family:"Cormorant SC",Georgia,serif;font-wei
 #arrow.dk{color:#7c1020;filter:drop-shadow(0 0 4px rgba(255,255,255,.9))}
 #arrow svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
-@media (prefers-reduced-motion:reduce){#arrow{animation:none}}
+.hint{position:absolute;bottom:calc(3% + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;z-index:6;font-family:"Cormorant SC",Georgia,serif;font-weight:700;font-size:12.5px;letter-spacing:.22em;color:var(--ivory);text-transform:uppercase;animation:nudge 1.8s ease-in-out infinite;pointer-events:none;transition:opacity .3s}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@media (prefers-reduced-motion:reduce){#arrow{animation:none}.hint{animation:none}}
 </style>
 </head>
 <body>
@@ -79,8 +81,8 @@ body{background:var(--outside);font-family:"Cormorant SC",Georgia,serif;font-wei
   <div class="lg" id="wl" role="img" aria-label="Monogram A dan H"></div>
   <img id="cp" alt="Pasangan pengantin berjalan bergandengan tangan" src="images/couple.webp">
  </div>
- <div class="hint" id="hint" aria-hidden="true">SKROLL KE BAWAH</div>
   <div id="arrow" aria-hidden="true"><svg viewBox="0 0 24 28"><path d="M5 6l7 7 7-7"/><path d="M5 14l7 7 7-7" opacity=".55"/></svg></div>
+  <div class="hint" id="hint">Skroll Ke Bawah</div>
  <button type="button" id="mus" aria-label="Matikan musik" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path class="w" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/><path class="x" d="M16 9.5l5 5M21 9.5l-5 5"/></svg></button>
  <div class="drape l" id="dl"></div><div class="drape r" id="dr"></div>
 
@@ -148,7 +150,7 @@ body{background:var(--outside);font-family:"Cormorant SC",Georgia,serif;font-wei
  var RW=941/1672,CR=.973;
  var P=[{s:1,x:.5,y:.5},{s:1.04,x:.5,y:.56},{s:1.7,x:.5,y:.48},{s:1.25,x:.5,y:.55},{s:1.12,x:.5,y:.56},{s:1.04,x:.5,y:.56}];
  var N=P.length,st=document.getElementById('stage'),wd=document.getElementById('world'),cp=document.getElementById('cp'),
-  tx=document.querySelectorAll('.tx'),dl=document.getElementById('dl'),dr=document.getElementById('dr'),
+  tx=document.querySelectorAll('.tx'),dl=document.getElementById('dl'),dr=document.getElementById('dr'),hint=document.getElementById('hint'),arrow=document.getElementById('arrow'),
   track=document.getElementById('track'),calm=matchMedia('(prefers-reduced-motion:reduce)').matches,
   SW=0,SH=0,W=0,H=0,cur=0,tgt=0,openP=0,openDir=0,last=0,autoRAF=0;
  function cl(v){return Math.max(0,Math.min(1,v))}
@@ -198,8 +200,8 @@ body{background:var(--outside);font-family:"Cormorant SC",Georgia,serif;font-wei
   dr.style.transform='translateX('+(c*108).toFixed(2)+'%) skewX('+(-sk).toFixed(2)+'deg) scaleX('+k.toFixed(4)+')';
   dl.style.visibility=dr.style.visibility=c>=.999?'hidden':'visible';
   mus.className=(c>.6?'on':'')+(muted?' off':'');
-  var ht=document.getElementById('hint');if(ht){ht.style.opacity=(1-cl(c*2.5)).toFixed(2)}
-   var arrowOp=c<0.3?0:cl((c-0.3)/0.4)*(1-cl((t-4.3)/0.5));
+  if(hint){hint.style.opacity=(1-cl(c*2.4)).toFixed(2)}
+   var arrowOp=c<0.25?0:cl((c-0.25)/0.4)*(1-cl((t-4.3)/0.5));
    arrow.style.opacity=arrowOp.toFixed(2);arrow.className=c>.5?'dk':'';
   var ap=cl((t-0.35)/0.95),a2=ez(ap),out=1-cl((t-2.55)/0.4),inn=cl((t-4.5)/0.4);
   var hN=lp(.22,.37,a2),fyF=lp(.775,.93,a2),wN=CR*hN,bob=ap>0&&ap<1?Math.sin(ap*24)*.0035:0;
@@ -213,7 +215,7 @@ body{background:var(--outside);font-family:"Cormorant SC",Georgia,serif;font-wei
   }
  }
 
- var arrow=document.getElementById('arrow');
+ var arrow=document.getElementById('arrow'),hint=document.getElementById('hint');
  // ---- musik: fade in halus, volume tetap pelan, loop mulus ----
  var bgm=document.getElementById('bgm'),mus=document.getElementById('mus'),mv=0,mT=0,muted=false,wantPlay=false;
  function playMusic(){if(muted)return;wantPlay=true;mT=1;var p=bgm.play();if(p&&p.catch)p.catch(function(){armGesture()})}
