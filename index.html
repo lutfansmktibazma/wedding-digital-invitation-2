@@ -6,11 +6,11 @@
 <title>Walimatulurus Allesya & Haikal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;1,500&family=Cormorant+SC:wght@500;600&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cormorant+SC:wght@400;500;600;700&display=swap">
 <style>
 :root{--logo:url(images/logo.webp);--maroon:#6b1a2b;--ivory:#f7f1e8;--pink:#e8b4bc;--gold:#c9a24f;--ink:#2f3a35;--outside:#0b0809;box-sizing:border-box}
 *{box-sizing:border-box;margin:0}
-body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",Georgia,serif;font-weight:600;color:var(--ink)}
+body{background:var(--outside);font-family:"Cormorant SC",Georgia,serif;font-weight:600;color:var(--ink)}
 .app{max-width:430px;margin:0 auto;background:var(--ivory);position:relative}
 .track{height:900svh;position:relative}
 .stage{position:sticky;top:0;height:100svh;overflow:hidden;background:#f3dcc0}
@@ -29,33 +29,33 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 .drape.r{right:0;transform-origin:100% 50%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,1.8% 84%,4.8% 66%,6.8% 47%,5% 30%,1.6% 14%)}
 .drape.r::after{left:0;transform:scaleX(-1)}
 /* teks */
-.tx{position:absolute;left:0;right:0;top:20%;z-index:4;padding:56px 26px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;
+.tx{position:absolute;left:0;right:0;top:20%;z-index:4;padding:42px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;
  background:radial-gradient(ellipse closest-side at 50% 50%,rgba(255,255,255,.93),rgba(255,255,255,.7) 50%,rgba(255,255,255,0) 100%)}
 .tx.dark{background:none;color:var(--ivory)}
 .tx.full{top:0;bottom:0;justify-content:center}
-.lbl{font-size:17px;letter-spacing:.08em;line-height:1.2}
-.cap{font-size:14px;letter-spacing:.05em;line-height:1.35;max-width:310px}
-.date{font-size:20px;letter-spacing:.06em;line-height:1.25}
-.name{font-family:"Cinzel",Georgia,serif;font-weight:400;font-size:46px;line-height:1.1;color:var(--ink);letter-spacing:.04em}
-.name.m{font-size:42px}.name.s{font-size:28px;line-height:1.15}
-.amp{font-family:"Cinzel",Georgia,serif;font-weight:400;font-size:34px;line-height:1.15;letter-spacing:.04em}
-.scr{font-family:"Pinyon Script",cursive;font-weight:400;font-size:25px;line-height:1.15;margin-top:8px}
-.ar{font-family:"Scheherazade New",serif;font-weight:400;font-size:40px;line-height:1.65;direction:rtl}
-.ital{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:16px;line-height:1.4}
-.gap{height:8px}
-.hint{position:absolute;bottom:calc(5% + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;z-index:4;font-size:13px;letter-spacing:.2em;color:var(--ivory);animation:nudge 1.8s ease-in-out infinite;pointer-events:none}
-@keyframes nudge{50%{transform:translateY(6px)}}
-.btns{display:flex;gap:10px;justify-content:center;margin-top:6px}
-.btn,button{font-family:inherit;font-weight:600;letter-spacing:.14em;font-size:13px;background:var(--maroon);color:var(--ivory);border:1px solid var(--gold);padding:10px 20px;border-radius:40px;cursor:pointer;text-decoration:none;display:inline-block}
+.lbl{font-family:"Cormorant SC",Georgia,serif;font-weight:600;font-size:15px;letter-spacing:.16em;line-height:1.2;text-transform:uppercase}
+.cap{font-family:"Cormorant SC",Georgia,serif;font-weight:600;font-size:13px;letter-spacing:.05em;line-height:1.4;max-width:320px}
+.bism-sub{font-size:11px;letter-spacing:.14em;line-height:1.2;margin-top:2px}
+.date{font-family:"Cormorant SC",Georgia,serif;font-weight:600;font-size:18px;letter-spacing:.06em;line-height:1.25}
+.name{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-weight:600;font-size:46px;line-height:1.05;color:var(--ink);letter-spacing:.02em}
+.name.m{font-size:38px;line-height:1.1;white-space:nowrap}
+.amp{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:32px;line-height:1.1}
+.amp-inline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:28px;margin:0 4px;vertical-align:baseline}
+.pada{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:26px;line-height:1.15}
+.bertempat{font-family:"Cormorant SC",Georgia,serif;font-weight:600;font-size:16px;letter-spacing:.08em;line-height:1.2}
+.dewan{font-size:16.5px;letter-spacing:.06em;font-weight:600}
+.peta{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:24px;line-height:1.15}
+.doa-title{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-weight:600;font-size:32px;letter-spacing:.04em;color:var(--ink);line-height:1.1}
+.ar{font-family:"Scheherazade New",serif;font-weight:400;font-size:34px;line-height:1.5;direction:rtl}
+.ital{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:15px;line-height:1.45;color:var(--ink)}
+.btns{display:flex;gap:12px;justify-content:center;margin-top:8px}
+.btn,button{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-style:italic;letter-spacing:.03em;font-size:15px;background:#4c0c19;color:var(--ivory);border:1px solid rgba(201,162,79,.35);padding:6px 20px;border-radius:24px;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 2px 5px rgba(0,0,0,.2)}
 .btn:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.cd{display:flex;justify-content:center;gap:8px;margin-top:8px}
-.cd div{width:56px;padding:6px 0;border:1px solid var(--gold);border-radius:3px;background:rgba(255,255,255,.7)}
-.cd b{display:block;font-size:20px;font-weight:600;color:var(--maroon)}.cd span{font-size:12px;letter-spacing:.08em}
-.sub{font-family:"Pinyon Script",cursive;font-weight:400;font-size:28px;line-height:1.15;color:var(--ink)}
-.orn{display:flex;align-items:center;gap:8px;width:120px}
-.orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--gold)}
-.orn i{width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
-.foot{background:#f6f2ea;color:#8c857b;text-align:center;font-family:"Cormorant SC","Cormorant Garamond",Georgia,serif;font-weight:600;font-size:11.5px;letter-spacing:.05em;line-height:1.3;padding:28px 16px calc(28px + env(safe-area-inset-bottom,0px))}
+.cd{display:flex;justify-content:center;gap:10px;margin-top:14px}
+.cd div{width:50px;padding:6px 0 5px;border:1px solid rgba(175,155,135,.45);border-radius:2px;background:rgba(255,255,255,.78);text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.cd b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:21px;font-weight:600;color:#5a0713;line-height:1;margin-bottom:3px}
+.cd span{font-family:"Cormorant SC",Georgia,serif;font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--ink);display:block}
+.foot{background:#f6f2ea;color:#8c857b;text-align:center;font-family:"Cormorant SC",Georgia,serif;font-weight:600;font-size:11.5px;letter-spacing:.05em;line-height:1.3;padding:28px 16px calc(28px + env(safe-area-inset-bottom,0px))}
 #mus{position:absolute;right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:40px;height:40px;padding:0;border-radius:50%;z-index:6;display:grid;place-items:center;background:rgba(247,241,232,.82);border:1px solid rgba(154,27,48,.35);color:#7c1020;opacity:0;pointer-events:none;transition:opacity .6s}
 #mus.on{opacity:1;pointer-events:auto}
 #mus svg{width:20px;height:20px}
@@ -64,7 +64,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 #arrow.dk{color:#7c1020;filter:drop-shadow(0 0 4px rgba(255,255,255,.9))}
 #arrow svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
-@media (prefers-reduced-motion:reduce){#arrow{animation:none}.hint{animation:none}}
+@media (prefers-reduced-motion:reduce){#arrow{animation:none}}
 </style>
 </head>
 <body>
@@ -88,33 +88,31 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   <p class="date" style="font-size:18px">30 Disember 2026</p>
  </div>
  <!-- 1 pembuka -->
- <div class="tx" style="top:20%">
+ <div class="tx" style="top:18%">
   <p class="lbl">Raikan Cinta</p>
-  <p class="name" style="margin-top:8px">Allesya</p>
+  <p class="name" style="margin-top:10px">Allesya</p>
   <p class="amp">&amp;</p>
   <p class="name">Haikal</p>
-  <p class="cap" style="margin-top:10px;font-size:14px;letter-spacing:.1em">30 Dis 2026</p>
+  <p class="cap" style="margin-top:12px;font-size:14px;letter-spacing:.12em">30 Dis 2026</p>
  </div>
  <!-- 2 jemputan -->
- <div class="tx" style="top:12%">
+ <div class="tx" style="top:11%">
   <p class="ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
-  <p class="cap" style="letter-spacing:.12em;font-size:12px;margin-top:2px">Bismillahirrahmanirrahim</p>
-  <p class="cap" style="margin-top:14px">Dengan penuh rasa syukur,<br>kami ingin menjemput</p>
-  <p class="cap" style="margin-top:10px">Dato' / Datin / Tuan / Puan / Encik / Cik<br>&amp; Sekeluarga ke</p>
-  <p class="cap" style="margin-top:14px">Majlis Perkahwinan<br>Anakanda Kami</p>
-  <p class="name m" style="margin-top:14px">Allesya</p>
-  <p class="amp">&amp;</p>
-  <p class="name m">Haikal</p>
+  <p class="cap bism-sub">Bismillahirrahmanirrahim</p>
+  <p class="cap" style="margin-top:13px">Dengan penuh rasa syukur,<br>kami ingin menjemput</p>
+  <p class="cap" style="margin-top:8px">Dato' / Datin / Tuan / Puan / Encik / Cik<br>&amp; Sekeluarga ke</p>
+  <p class="cap" style="margin-top:11px">Majlis Perkahwinan<br>Anakanda Kami</p>
+  <p class="name m" style="margin-top:14px">Allesya <span class="amp-inline">&amp;</span> Haikal</p>
  </div>
  <!-- 3 butiran majlis -->
- <div class="tx" style="top:11%">
-  <p class="scr" style="margin:0">Pada</p>
-  <p class="date">Rabu, 30 Disember 2026</p>
-  <p class="cap">20 Rejab 1448H<br>12:00 Tengah Hari – 5:00 Petang</p>
-  <p class="scr" style="margin-top:16px">Bertempat di</p>
-  <p class="cap" style="font-size:17px">Dewan Istiqlal</p>
-  <p class="cap">Masjid Tengku Sharafudin Badlishah<br>Pulau Kijang, 06300 Kuala Nerang, Kedah</p>
-  <p class="scr" style="margin-top:14px">Peta Lokasi</p>
+ <div class="tx" style="top:8%">
+  <p class="pada">Pada</p>
+  <p class="date" style="margin-top:2px">Rabu, 30 Disember 2026</p>
+  <p class="cap" style="margin-top:3px">20 Rejab 1448H<br>12:00 Tengah Hari – 5:00 Petang</p>
+  <p class="bertempat" style="margin-top:15px">Bertempat di</p>
+  <p class="cap dewan" style="margin-top:3px">Dewan Istiqlal</p>
+  <p class="cap" style="margin-top:2px">Masjid Tengku Sharafudin Badlishah<br>Pulau Kijang, 06300 Kuala Nerang, Kedah</p>
+  <p class="peta" style="margin-top:13px">Peta Lokasi</p>
   <div class="btns">
    <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dewan+Istiqlal+Masjid+Tengku+Sharafudin+Badlishah+Pulau+Kijang+Kuala+Nerang+Kedah">Google Maps</a>
    <a class="btn" target="_blank" rel="noopener" href="https://waze.com/ul?q=Masjid+Tengku+Sharafudin+Badlishah+Pulau+Kijang+Kuala+Nerang&navigate=yes">Waze</a>
@@ -122,21 +120,19 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   <div class="cd" id="cd"></div>
  </div>
  <!-- 4 doa -->
- <div class="tx" style="top:15%">
-  <p class="name m" style="font-size:44px">Doa Buat Pengantin</p>
-  <div class="gap"></div>
-  <p class="cap">Ya Allah, Ya Rahman, Ya Rahim,<br>berkatilah perkahwinan ini, limpahkanlah rahmat dan kasih sayang-Mu kepada mereka, serta satukanlah hati mereka dalam kebaikan.</p>
-  <div class="gap"></div>
-  <p class="cap">Semoga rumah tangga yang dibina sentiasa dipenuhi sakinah, mawaddah dan rahmah, dimurahkan rezeki, dikurniakan zuriat yang soleh dan solehah, serta kekal bersama dalam cinta dan kebahagiaan hingga ke syurga.</p>
-  <p class="ital" style="margin-top:8px">Barakallahu laka wa baraka 'alaika wa jama'a bainakuma fii khair.</p>
+ <div class="tx" style="top:10%">
+  <p class="doa-title">Doa Buat Pengantin</p>
+  <p class="cap" style="margin-top:14px">Ya Allah, Ya Rahman, Ya Rahim,<br>berkatilah perkahwinan ini, limpahkanlah<br>rahmat dan kasih sayang-Mu kepada mereka,<br>serta satukanlah hati mereka dalam kebaikan.</p>
+  <p class="cap" style="margin-top:12px">Semoga rumah tangga yang dibina sentiasa<br>dipenuhi sakinah, mawaddah dan rahmah,<br>dimurahkan rezeki, dikurniakan zuriat yang<br>soleh dan solehah, serta kekal bersama dalam<br>cinta dan kebahagiaan hingga ke syurga.</p>
+  <p class="ital" style="margin-top:14px">Barakallahu laka wa baraka 'alaika wa jama'a<br>bainakuma fii khair.</p>
  </div>
  <!-- 5 penutup (ulang pembuka) -->
- <div class="tx" style="top:20%">
+ <div class="tx" style="top:18%">
   <p class="lbl">Raikan Cinta</p>
-  <p class="name" style="margin-top:8px">Allesya</p>
+  <p class="name" style="margin-top:10px">Allesya</p>
   <p class="amp">&amp;</p>
   <p class="name">Haikal</p>
-  <p class="cap" style="margin-top:10px;font-size:14px;letter-spacing:.1em">30 Dis 2026</p>
+  <p class="cap" style="margin-top:12px;font-size:14px;letter-spacing:.12em">30 Dis 2026</p>
  </div>
 </div>
 </div>
