@@ -184,7 +184,7 @@ body{background:var(--outside);margin:0;padding:0;min-height:100%;font-family:"C
 <script>
 (function(){
  var RW=941/1672,CR=.973;
- var P=[{s:1,x:.5,y:.5},{s:1.04,x:.5,y:.56},{s:1.7,x:.5,y:.48},{s:1.25,x:.5,y:.55},{s:1.12,x:.5,y:.56},{s:1.04,x:.5,y:.56}];
+ var P=[{s:1.04,x:.5,y:.54},{s:1.04,x:.5,y:.56},{s:1.7,x:.5,y:.48},{s:1.25,x:.5,y:.55},{s:1.12,x:.5,y:.56},{s:1.04,x:.5,y:.56}];
  var N=P.length,st=document.getElementById('stage'),wd=document.getElementById('world'),cp=document.getElementById('cp'),wl=document.getElementById('wl'),
   tx=document.querySelectorAll('.tx'),dl=document.getElementById('dl'),dr=document.getElementById('dr'),
   arrow=document.getElementById('arrow'),hint=document.getElementById('hint'),
@@ -211,8 +211,13 @@ body{background:var(--outside);margin:0;padding:0;min-height:100%;font-family:"C
   return '<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs>'+g+'</defs><g'+(flip?' transform="translate(100 0) scale(-1 1)"':'')+'><rect width="100" height="100" fill="#5a0713"/>'+po+th+'<rect width="100" height="100" fill="url(#'+id+'v)"/></g></svg>';
  }
  dl.innerHTML=drapeSVG(11,false,'dl');dr.innerHTML=drapeSVG(47,true,'dr');
- function size(){SW=st.clientWidth;SH=st.clientHeight;H=SH;W=H*RW;if(W<SW){W=SW;H=W/RW}
-  wd.style.width=W+'px';wd.style.height=H+'px'} 
+ function size(){
+  SW=st.clientWidth;
+  var maxH=Math.max(st.clientHeight,window.innerHeight||0,(screen&&screen.height)?screen.height*.9:0);
+  SH=Math.ceil(maxH*1.08);
+  H=SH;W=H*RW;
+  if(W<SW){W=SW;H=W/RW}
+  wd.style.width=Math.ceil(W)+'px';wd.style.height=Math.ceil(H)+'px'} 
  function yFor(t){return t/(N-1)*(track.offsetHeight-innerHeight)}
  function read(){var h=track.offsetHeight-innerHeight;tgt=cl(-track.getBoundingClientRect().top/h)*(N-1);
   if(tgt>0.03&&!openDir){openDir=1;if(calm)openP=1;else autoScroll();playMusic()}
@@ -226,10 +231,12 @@ body{background:var(--outside);margin:0;padding:0;min-height:100%;font-family:"C
   (function stepA(n){var p=cl((n-t0)/D);scrollTo(0,y0+(y1-y0)*io3(p));if(p<1)autoRAF=requestAnimationFrame(stepA);else stop()})(t0);
  }
  function draw(t,c){
+  var curSW=st.clientWidth||SW,curSH=st.clientHeight||SH;
+  if(curSH>SH||Math.abs(curSW-SW)>2){size();curSW=st.clientWidth;curSH=st.clientHeight}
   var i=Math.min(N-2,Math.floor(t)),f=ez(cl(t-i)),a=P[i],b=P[i+1];
   var s=lp(a.s,b.s,f),fx=lp(a.x,b.x,f),fy=lp(a.y,b.y,f);
-  var x0=SW/2-fx*W*s,y0=SH/2-fy*H*s;
-  x0=Math.min(0,Math.max(SW-W*s,x0));y0=Math.min(0,Math.max(SH-H*s,y0));
+  var x0=curSW/2-fx*W*s,y0=curSH/2-fy*H*s;
+  x0=Math.min(0,Math.max(curSW-W*s,x0));y0=Math.min(0,Math.max(curSH-H*s,y0));
   wd.style.transform='translate3d('+x0.toFixed(1)+'px,'+y0.toFixed(1)+'px,0) scale('+s.toFixed(4)+')';
   // hordeng: terkumpul ke tepi sambil bergoyang halus, lalu keluar layar
   var k=1-.6*c,sk=Math.sin(Math.PI*c)*2.4;
