@@ -9,9 +9,12 @@
 <title>The Wedding of Allesya &amp; Haikal</title>
 <link rel="icon" type="image/webp" href="images/logo.webp">
 <link rel="apple-touch-icon" href="images/logo.webp">
+<link rel="preload" as="image" href="images/bg.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="images/logo.webp" type="image/webp">
+<link rel="preload" as="image" href="images/couple.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lateef:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cormorant+SC:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@1,400;1,700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lateef:wght@400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Cormorant+SC:wght@500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap">
 <style>
 :root{--logo:url(images/logo.webp);--maroon:#6b1a2b;--ivory:#f7f1e8;--pink:#e8b4bc;--gold:#c9a24f;--ink:#2f3a35;--outside:#5a0713;box-sizing:border-box}
 *{box-sizing:border-box;margin:0}
@@ -20,14 +23,14 @@ body{background:var(--outside);margin:0;padding:0;min-height:100%;font-family:"C
 .app{max-width:430px;margin:0 auto;background:var(--outside);position:relative;min-height:100%}
 .track{height:1200vh;height:1200dvh;position:relative}
 .stage{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden;background:#5a0713}
-#world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+#world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform;transform:translateZ(0);backface-visibility:hidden}
 #world img{position:absolute;display:block;user-select:none;-webkit-user-drag:none}
-#bg{left:0;top:0;width:100%;height:100%}
-#cp{will-change:opacity,top,left,width}
-#wl{position:absolute;left:40.4%;top:15%;width:19.2%;aspect-ratio:489/520;filter:drop-shadow(0 1px 1.5px rgba(90,50,10,.55)) drop-shadow(0 3px 6px rgba(90,50,10,.25));opacity:.96}
+#bg{left:0;top:0;width:100%;height:100%;pointer-events:none}
+#cp{will-change:opacity,top,left,width;transform:translateZ(0);backface-visibility:hidden}
+#wl{position:absolute;left:40.4%;top:15%;width:19.2%;aspect-ratio:489/520;filter:drop-shadow(0 1px 1.5px rgba(90,50,10,.55)) drop-shadow(0 3px 6px rgba(90,50,10,.25));opacity:.96;transform:translateZ(0)}
 .lg{background:var(--logo) center/contain no-repeat;display:block}
 /* hordeng maroon */
-.drape{position:absolute;top:0;bottom:0;width:57%;z-index:3;pointer-events:none;will-change:transform;background:#5a0713;overflow:hidden}
+.drape{position:absolute;top:0;bottom:0;width:57%;z-index:3;pointer-events:none;will-change:transform;transform:translateZ(0);backface-visibility:hidden;background:#5a0713;overflow:hidden}
 .drape svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .drape::after{content:"";position:absolute;top:0;bottom:0;width:26px;background:linear-gradient(90deg,rgba(25,0,4,0),rgba(25,0,4,.4))}
 .drape.l{left:0;transform-origin:0 50%;clip-path:polygon(0 0,100% 0,98.5% 16%,95.5% 34%,93.5% 51%,95.5% 68%,98.5% 85%,100% 100%,0 100%)}
@@ -35,7 +38,7 @@ body{background:var(--outside);margin:0;padding:0;min-height:100%;font-family:"C
 .drape.r{right:0;transform-origin:100% 50%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,1.8% 84%,4.8% 66%,6.8% 47%,5% 30%,1.6% 14%)}
 .drape.r::after{left:0;transform:scaleX(-1)}
 /* teks */
-.tx{position:absolute;left:0;right:0;top:18%;z-index:4;padding:16px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;transition:none}
+.tx{position:absolute;left:0;right:0;top:18%;z-index:4;padding:16px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;transform:translateZ(0);backface-visibility:hidden;transition:none}
 .tx.dark{background:none;color:var(--ivory)}
 .tx.full{top:0;bottom:0;justify-content:center}
 .tx.s1,.tx.s5{top:198px!important;padding:0 20px!important;background:none!important}
@@ -105,14 +108,14 @@ body{background:var(--outside);margin:0;padding:0;min-height:100%;font-family:"C
   <p class="desk-date">30 . 12 . 2026</p>
  </div>
 </aside>
-<audio id="bgm" loop preload="auto" src="audio/bgm.mp3"></audio>
+<audio id="bgm" loop preload="none" src="audio/bgm.mp3"></audio>
 <main class="app">
 <div class="track" id="track">
 <div class="stage" id="stage">
  <div id="world">
-  <img id="bg" alt="Pelamin dengan sofa, tirai maroon dan bunga" src="images/bg.jpg">
+  <img id="bg" alt="Pelamin dengan sofa, tirai maroon dan bunga" src="images/bg.jpg" fetchpriority="high" decoding="async">
   <div class="lg" id="wl" role="img" aria-label="Monogram A dan H"></div>
-  <img id="cp" alt="Pasangan pengantin berjalan bergandengan tangan" src="images/couple.webp">
+  <img id="cp" alt="Pasangan pengantin berjalan bergandengan tangan" src="images/couple.webp" decoding="async">
  </div>
  <div id="arrow" aria-hidden="true"><svg viewBox="0 0 24 28"><path d="M5 6l7 7 7-7"/><path d="M5 14l7 7 7-7" opacity=".55"/></svg></div>
  <p id="hint" aria-hidden="true">Skrol ke Bawah</p>
