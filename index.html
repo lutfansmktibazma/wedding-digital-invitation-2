@@ -69,11 +69,12 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 #mus.on{opacity:1;pointer-events:auto}
 #mus svg{width:20px;height:20px}
 #mus .x{display:none}#mus.off .w{display:none}#mus.off .x{display:block}
-#arrow{position:absolute;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:30px;height:34px;margin-left:-15px;z-index:6;pointer-events:none;color:#f7f1e8;transition:color .6s,opacity .3s;animation:bob 1.9s ease-in-out infinite}
+#arrow{position:absolute;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:30px;height:34px;margin-left:-15px;z-index:6;pointer-events:none;color:#f7f1e8;opacity:0;transition:color .6s;animation:bob 1.9s ease-in-out infinite}
 #arrow.dk{color:#7c1020;filter:drop-shadow(0 0 4px rgba(255,255,255,.9))}
 #arrow svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#hint{position:absolute;left:0;right:0;text-align:center;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:6;pointer-events:none;color:#f7f1e8;text-shadow:0 1px 3px rgba(0,0,0,.55);font-family:"Cormorant Garamond",Georgia,serif;font-variant:small-caps;font-weight:600;font-size:15px;letter-spacing:.16em;animation:bob 1.9s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
-@media (prefers-reduced-motion:reduce){#arrow{animation:none}}
+@media (prefers-reduced-motion:reduce){#arrow,#hint{animation:none}}
 </style>
 </head>
 <body>
@@ -87,6 +88,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   <img id="cp" alt="Pasangan pengantin berjalan bergandengan tangan" src="images/couple.webp">
  </div>
  <div id="arrow" aria-hidden="true"><svg viewBox="0 0 24 28"><path d="M5 6l7 7 7-7"/><path d="M5 14l7 7 7-7" opacity=".55"/></svg></div>
+ <p id="hint" aria-hidden="true">Skrol ke Bawah</p>
  <button type="button" id="mus" aria-label="Matikan musik" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path class="w" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/><path class="x" d="M16 9.5l5 5M21 9.5l-5 5"/></svg></button>
  <div class="drape l" id="dl"></div><div class="drape r" id="dr"></div>
 
@@ -155,6 +157,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
  var P=[{s:1,x:.5,y:.5},{s:1.04,x:.5,y:.56},{s:1.7,x:.5,y:.48},{s:1.25,x:.5,y:.55},{s:1.12,x:.5,y:.56},{s:1.04,x:.5,y:.56}];
  var N=P.length,st=document.getElementById('stage'),wd=document.getElementById('world'),cp=document.getElementById('cp'),
   tx=document.querySelectorAll('.tx'),dl=document.getElementById('dl'),dr=document.getElementById('dr'),
+  arrow=document.getElementById('arrow'),hint=document.getElementById('hint'),
   track=document.getElementById('track'),calm=matchMedia('(prefers-reduced-motion:reduce)').matches,
   SW=0,SH=0,W=0,H=0,cur=0,tgt=0,openP=0,openDir=0,last=0,autoRAF=0;
  function cl(v){return Math.max(0,Math.min(1,v))}
@@ -179,7 +182,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
  }
  dl.innerHTML=drapeSVG(11,false,'dl');dr.innerHTML=drapeSVG(47,true,'dr');
  function size(){SW=st.clientWidth;SH=st.clientHeight;H=SH;W=H*RW;if(W<SW){W=SW;H=W/RW}
-  wd.style.width=W+'px';wd.style.height=H+'px'}
+  wd.style.width=W+'px';wd.style.height=H+'px'} 
  function yFor(t){return t/(N-1)*(track.offsetHeight-innerHeight)}
  function read(){var h=track.offsetHeight-innerHeight;tgt=cl(-track.getBoundingClientRect().top/h)*(N-1);
   if(tgt>0.03&&!openDir){openDir=1;if(calm)openP=1;else autoScroll();playMusic()}
@@ -204,7 +207,10 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   dr.style.transform='translateX('+(c*108).toFixed(2)+'%) skewX('+(-sk).toFixed(2)+'deg) scaleX('+k.toFixed(4)+')';
   dl.style.visibility=dr.style.visibility=c>=.999?'hidden':'visible';
   mus.className=(c>.6?'on':'')+(muted?' off':'');
-  arrow.style.opacity=1-cl((t-4.3)/0.5);arrow.className=c>.5?'dk':'';
+  hint.style.opacity=cl(1-c*2.5);
+  var aF=c>.3?cl((c-.3)/.3):0;
+  arrow.style.opacity=aF*(1-cl((t-4.3)/0.5));
+  arrow.className=c>.5?'dk':'';
   var ap=cl((t-0.35)/0.95),a2=ez(ap),out=1-cl((t-2.55)/0.4),inn=cl((t-4.5)/0.4);
   var hN=lp(.22,.37,a2),fyF=lp(.775,.93,a2),wN=CR*hN,bob=ap>0&&ap<1?Math.sin(ap*24)*.0035:0;
   cp.style.width=(wN*100)+'%';cp.style.left=((.5-wN/2)*100)+'%';cp.style.top=((fyF-hN+bob)*100)+'%';
@@ -220,7 +226,6 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
    }
  }
 
- var arrow=document.getElementById('arrow');
  // ---- musik: fade in halus, volume tetap pelan, loop mulus ----
  var bgm=document.getElementById('bgm'),mus=document.getElementById('mus'),mv=0,mT=0,muted=false,wantPlay=false;
  function playMusic(){if(muted)return;wantPlay=true;mT=1;var p=bgm.play();if(p&&p.catch)p.catch(function(){armGesture()})}
