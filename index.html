@@ -18,7 +18,7 @@
 html{background:var(--outside);height:100%;overscroll-behavior:none}
 body{background:var(--outside);margin:0;padding:0;min-height:100%;font-family:"Cormorant SC","Cormorant Garamond",Georgia,serif;font-weight:600;-webkit-font-smoothing:antialiased;color:var(--ink);overscroll-behavior:none;touch-action:pan-y}
 .app{max-width:430px;margin:0 auto;background:var(--outside);position:relative;min-height:100%}
-.track{height:900vh;height:900dvh;position:relative}
+.track{height:1200vh;height:1200dvh;position:relative}
 .stage{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden;background:#5a0713}
 #world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
 #world img{position:absolute;display:block;user-select:none;-webkit-user-drag:none}
@@ -227,13 +227,18 @@ body{background:var(--outside);margin:0;padding:0;min-height:100%;font-family:"C
   cp.style.opacity=t<4?a2*out:inn;
   wl.style.opacity=0.96;
   for(var j=0;j<tx.length;j++){
-    var d=Math.abs(t-j);
-    var rawOp=j===0?1-cl(c*2.8):cl(1.8-d*2.8);
-    var op=ez(rawOp);
+    var d=Math.abs(t-j),op=0;
+    if(j===0){
+      op=cl(1-c*2.5)*(t<0.48?ez(cl((0.48-t)/0.24)):0);
+    }else{
+      if(d<=0.22){op=1}
+      else if(d<0.46){op=ez((0.46-d)/0.24)}
+      else{op=0}
+    }
     tx[j].style.opacity=op;
-    var dy=j===0?0:((j-t)*22).toFixed(1);
+    var dy=j===0?0:((j-t)*28).toFixed(1);
     tx[j].style.transform='translate3d(0,'+dy+'px,0)';
-    tx[j].style.pointerEvents=op>.5?'auto':'none';
+    tx[j].style.pointerEvents=op>.6?'auto':'none';
    }
  }
 
@@ -252,7 +257,7 @@ body{background:var(--outside);margin:0;padding:0;min-height:100%;font-family:"C
   var dt=last?Math.min(.05,(ts-last)/1000):0;last=ts;
   fadeStep(dt);
   if(!calm){openP=cl(openP+(openDir?1:-1)*dt/1.6)}else openP=openDir?1:0;
-  cur=calm?tgt:cur+(tgt-cur)*0.07;if(Math.abs(tgt-cur)<.0003)cur=tgt;
+  cur=calm?tgt:cur+(tgt-cur)*0.075;if(Math.abs(tgt-cur)<.0003)cur=tgt;
   draw(cur,io3(openP));requestAnimationFrame(loop)}
  addEventListener('scroll',read,{passive:true});
  addEventListener('resize',function(){size();read()});
