@@ -29,47 +29,49 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 .drape.r{right:0;transform-origin:100% 50%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,1.8% 84%,4.8% 66%,6.8% 47%,5% 30%,1.6% 14%)}
 .drape.r::after{left:0;transform:scaleX(-1)}
 /* teks */
-.tx{position:absolute;left:0;right:0;top:20%;z-index:4;padding:40px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;
- background:radial-gradient(ellipse closest-side at 50% 50%,rgba(255,255,255,.95),rgba(255,255,255,.78) 55%,rgba(255,255,255,0) 100%)}
-.tx.dark{background:none;color:var(--ivory)}
+.tx{position:absolute;left:0;right:0;top:20%;z-index:4;padding:36px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;
+ background:radial-gradient(ellipse 75% 65% at 50% 50%,rgba(255,255,255,.95) 0%,rgba(255,255,255,.82) 55%,rgba(255,255,255,0) 100%);
+ text-shadow:0 1px 1px rgba(255,255,255,.6)}
+.tx.dark{background:none;color:var(--ivory);text-shadow:none}
 .tx.full{top:0;bottom:0;justify-content:center}
 
 /* Scene 1 & 5: Pembuka */
-.sc-sub{font-family:"Cormorant SC",Georgia,serif;font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:#2f3a35;font-weight:600;line-height:1.2}
-.name-hero{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:52px;line-height:.95;letter-spacing:.04em;color:#2f3a35;font-weight:600}
-.amp-hero{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:26px;line-height:1.2;color:#2f3a35;margin:3px 0}
-.date-hero{font-family:"Cormorant Garamond",Georgia,serif;font-size:17px;letter-spacing:.09em;color:#2f3a35;font-weight:500;line-height:1.2}
+.sc-sub{font-family:"Cormorant SC",Georgia,serif;font-size:14px;letter-spacing:.25em;text-transform:uppercase;color:#33292c;font-weight:600;line-height:1.2}
+.name-hero{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:52px;line-height:1;letter-spacing:.05em;color:#2c2024;font-weight:600}
+.amp-hero{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:26px;line-height:1.1;color:#5a484d;margin:4px 0}
+.date-hero{font-family:"Cormorant Garamond",Georgia,serif;font-size:17px;letter-spacing:.12em;color:#33292c;font-weight:500;line-height:1.2}
 
 /* Scene 2: Jemputan */
-.ar{font-family:"Amiri","Aref Ruqaa",serif;font-size:28px;line-height:1.45;color:#2f3a35;margin-bottom:2px}
-.sc-cap{font-family:"Cormorant SC",Georgia,serif;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#352b2e;font-weight:600;line-height:1.2}
-.sc-body{font-family:"Cormorant SC",Georgia,serif;font-size:12.5px;line-height:1.55;letter-spacing:.11em;text-transform:uppercase;color:#352b2e;font-weight:600}
-.name-inline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:36px;line-height:1;letter-spacing:.04em;color:#2f3a35;font-weight:600;white-space:nowrap}
-.amp-inline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:28px;font-weight:400}
+.ar{font-family:"Amiri","Aref Ruqaa",serif;font-size:27px;line-height:1.45;color:#2c2024;margin-bottom:2px}
+.sc-cap{font-family:"Cormorant SC",Georgia,serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#554549;font-weight:600;line-height:1.2}
+.sc-lead{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.6;letter-spacing:.12em;text-transform:uppercase;color:#554549;font-weight:600}
+.sc-guest{font-family:"Cormorant SC",Georgia,serif;font-size:13px;line-height:1.55;letter-spacing:.11em;text-transform:uppercase;color:#241b1d;font-weight:700}
+.sc-event{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.6;letter-spacing:.12em;text-transform:uppercase;color:#554549;font-weight:600}
+.name-inline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:36px;line-height:1.05;letter-spacing:.05em;color:#2c1e22;font-weight:600;white-space:nowrap}
+.amp-inline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:26px;font-weight:400;color:#5a484d}
 
 /* Scene 3: Butiran Majlis */
-.it-label{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:22px;color:#2f3a35;font-weight:500;line-height:1.2}
-.date-large{font-family:"Cormorant Garamond",Georgia,serif;font-size:23px;letter-spacing:.03em;color:#2f3a35;font-weight:600;line-height:1.25}
-.sc-time{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.55;letter-spacing:.09em;text-transform:uppercase;color:#352b2e;font-weight:600}
-.venue-title{font-family:"Cormorant SC",Georgia,serif;font-size:19px;letter-spacing:.08em;text-transform:uppercase;color:#2f3a35;font-weight:700;line-height:1.2}
-.sc-venue{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.55;letter-spacing:.08em;text-transform:uppercase;color:#352b2e;font-weight:600;max-width:320px}
+.it-label{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:21px;color:#6b1a2b;font-weight:600;line-height:1.2;letter-spacing:.02em}
+.date-large{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;letter-spacing:.04em;color:#241b1d;font-weight:600;line-height:1.2}
+.sc-time{font-family:"Cormorant SC",Georgia,serif;font-size:11.5px;line-height:1.6;letter-spacing:.1em;text-transform:uppercase;color:#4f4044;font-weight:600}
+.venue-title{font-family:"Cormorant SC",Georgia,serif;font-size:19px;letter-spacing:.1em;text-transform:uppercase;color:#241b1d;font-weight:700;line-height:1.2}
+.sc-venue{font-family:"Cormorant SC",Georgia,serif;font-size:11.5px;line-height:1.6;letter-spacing:.08em;text-transform:uppercase;color:#4f4044;font-weight:600;max-width:320px}
 
 /* Scene 4: Doa */
-.doa-title{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:36px;letter-spacing:.03em;color:#2b2627;font-weight:600;line-height:1.1}
-.doa-body{font-family:"Cormorant SC",Georgia,serif;font-size:12.5px;line-height:1.6;letter-spacing:.09em;text-transform:uppercase;color:#382e32;font-weight:600;max-width:340px}
-.doa-latin{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:15px;line-height:1.45;color:#7c1a2c;font-weight:600;letter-spacing:.02em}
+.doa-title{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:35px;letter-spacing:.04em;color:#2c1e22;font-weight:600;line-height:1.15}
+.doa-body{font-family:"Cormorant SC",Georgia,serif;font-size:12.5px;line-height:1.75;letter-spacing:.09em;text-transform:uppercase;color:#3a2e32;font-weight:600;max-width:330px}
 
 .gap{height:10px}
 .btns{display:flex;gap:14px;justify-content:center;margin-top:8px}
-.btn{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;letter-spacing:.06em;font-size:15px;background:#5a0713;color:#f7f1e8;border:none;padding:7px 22px;border-radius:30px;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 2px 6px rgba(90,7,19,.2);transition:transform .2s,background .2s}
+.btn{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;letter-spacing:.06em;font-size:15px;background:#5a0713;color:#f7f1e8;border:none;padding:7px 22px;border-radius:30px;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 3px 8px rgba(90,7,19,.22);transition:transform .2s,background .2s}
 .btn:hover{background:#6f0c1b;transform:translateY(-1px)}
 .btn:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
 /* Countdown cards */
 .cd{display:flex;justify-content:center;gap:8px;margin-top:12px}
-.cd div{width:56px;padding:8px 4px 6px;border:1px solid rgba(196,178,154,.75);border-radius:2px;background:rgba(251,248,243,.85);box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.cd div{width:56px;padding:7px 4px 6px;border:1px solid rgba(196,178,154,.6);border-radius:3px;background:rgba(255,255,255,.88);box-shadow:0 2px 6px rgba(0,0,0,.05);backdrop-filter:blur(4px)}
 .cd b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;color:#6b1a2b;line-height:1}
-.cd span{display:block;font-family:"Cormorant SC",Georgia,serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#4a403b;margin-top:4px;font-weight:600}
+.cd span{display:block;font-family:"Cormorant SC",Georgia,serif;font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:#55484c;margin-top:4px;font-weight:600}
 
 .foot{background:#f6f2ea;color:#8c857b;text-align:center;font-family:"Cormorant SC","Cormorant Garamond",Georgia,serif;font-weight:600;font-size:11.5px;letter-spacing:.05em;line-height:1.3;padding:8px 16px calc(8px + env(safe-area-inset-bottom,0px))}
 .btn.open{background:transparent;color:var(--ivory);border:1px solid var(--gold);padding:13px 30px;margin-top:26px;font-family:"Cormorant SC",Georgia,serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
@@ -117,14 +119,14 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
  <!-- 2 jemputan -->
  <div class="tx" style="top:12%">
   <p class="ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
-  <p class="sc-cap" style="margin-bottom:12px">Bismillahirrahmanirrahim</p>
-  <p class="sc-body">Dengan penuh rasa syukur,<br>kami ingin menjemput</p>
-  <p class="sc-body" style="margin-top:8px">Dato’ / Datin / Tuan / Puan / Encik / Cik<br>&amp; Sekeluarga ke</p>
-  <p class="sc-body" style="margin-top:8px">Majlis Perkahwinan<br>Anakanda Kami</p>
-  <p class="name-inline" style="margin-top:14px">Allesya <span class="amp-inline">&amp;</span> Haikal</p>
+  <p class="sc-cap" style="margin-bottom:14px">Bismillahirrahmanirrahim</p>
+  <p class="sc-lead">Dengan penuh rasa syukur,<br>kami ingin menjemput</p>
+  <p class="sc-guest" style="margin-top:10px">Dato’ / Datin / Tuan / Puan / Encik / Cik<br>&amp; Sekeluarga ke</p>
+  <p class="sc-event" style="margin-top:10px">Majlis Perkahwinan<br>Anakanda Kami</p>
+  <p class="name-inline" style="margin-top:16px">Allesya <span class="amp-inline">&amp;</span> Haikal</p>
  </div>
  <!-- 3 butiran majlis -->
- <div class="tx" style="top:10%">
+ <div class="tx" style="top:9%">
   <p class="it-label">Pada</p>
   <p class="date-large" style="margin-top:4px">Rabu, 30 Disember 2026</p>
   <p class="sc-time" style="margin-top:4px">20 Rejab 1448H<br>12:00 Tengah Hari – 5:00 Petang</p>
@@ -139,14 +141,12 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   <div class="cd" id="cd"></div>
  </div>
  <!-- 4 doa -->
- <div class="tx" style="top:14%">
+ <div class="tx" style="top:15%">
   <p class="doa-title">Doa Buat Pengantin</p>
-  <div class="gap" style="height:12px"></div>
+  <div class="gap" style="height:14px"></div>
   <p class="doa-body">Ya Allah, Ya Rahman, Ya Rahim,<br>berkatilah perkahwinan ini, limpahkanlah<br>rahmat dan kasih sayang-Mu kepada mereka,<br>serta satukanlah hati mereka dalam kebaikan.</p>
-  <div class="gap" style="height:10px"></div>
+  <div class="gap" style="height:14px"></div>
   <p class="doa-body">Semoga rumah tangga yang dibina sentiasa<br>dipenuhi sakinah, mawaddah dan rahmah,<br>dimurahkan rezeki, dikurniakan zuriat yang<br>soleh dan solehah, serta kekal bersama dalam<br>cinta dan kebahagiaan hingga ke syurga.</p>
-  <div class="gap" style="height:12px"></div>
-  <p class="doa-latin">Barakallahu laka wa baraka ‘alaika wa jama‘a<br>bainakuma fii khair.</p>
  </div>
  <!-- 5 penutup (ulang pembuka) -->
  <div class="tx" style="top:19%">
