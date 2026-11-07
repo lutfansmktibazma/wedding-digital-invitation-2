@@ -29,7 +29,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 .drape.r{right:0;transform-origin:100% 50%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,1.8% 84%,4.8% 66%,6.8% 47%,5% 30%,1.6% 14%)}
 .drape.r::after{left:0;transform:scaleX(-1)}
 /* teks */
-.tx{position:absolute;left:0;right:0;top:18%;z-index:4;padding:16px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform}
+.tx{position:absolute;left:0;right:0;top:18%;z-index:4;padding:16px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;transition:none}
 .tx.dark{background:none;color:var(--ivory)}
 .tx.full{top:0;bottom:0;justify-content:center}
 .tx.s1,.tx.s5{top:198px!important;padding:0 20px!important;background:none!important}
@@ -75,7 +75,8 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 #arrow.dk{color:#7c1020}
 #arrow svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 #hint{position:absolute;left:0;right:0;text-align:center;bottom:calc(46px + env(safe-area-inset-bottom,0px));z-index:6;pointer-events:none;color:#f7f1e8;font-family:"Cormorant Garamond",Georgia,serif;font-variant:small-caps;font-weight:600;font-size:12px;letter-spacing:.18em}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){#arrow{animation:none}}
 </style>
 </head>
@@ -220,10 +221,10 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   wl.style.opacity=t<2?0.96:(t<2.5?0.96*(1-(t-2)/0.5):(t>4.5?0.96*cl((t-4.5)/0.5):0));
   for(var j=0;j<tx.length;j++){
     var d=Math.abs(t-j);
-    var rawOp=j===0?1-cl(c*2.8):cl(1.6-d*2.6);
+    var rawOp=j===0?1-cl(c*2.8):cl(1.8-d*2.8);
     var op=ez(rawOp);
     tx[j].style.opacity=op;
-    var dy=j===0?0:((j-t)*32).toFixed(1);
+    var dy=j===0?0:((j-t)*22).toFixed(1);
     tx[j].style.transform='translate3d(0,'+dy+'px,0)';
     tx[j].style.pointerEvents=op>.5?'auto':'none';
    }
@@ -243,8 +244,8 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
  function loop(ts){
   var dt=last?Math.min(.05,(ts-last)/1000):0;last=ts;
   fadeStep(dt);
-  if(!calm){openP=cl(openP+(openDir?1:-1)*dt/1.9)}else openP=openDir?1:0;
-  cur=calm?tgt:cur+(tgt-cur)*0.12;if(Math.abs(tgt-cur)<.0005)cur=tgt;
+  if(!calm){openP=cl(openP+(openDir?1:-1)*dt/1.6)}else openP=openDir?1:0;
+  cur=calm?tgt:cur+(tgt-cur)*0.09;if(Math.abs(tgt-cur)<.0005)cur=tgt;
   draw(cur,io3(openP));requestAnimationFrame(loop)}
  addEventListener('scroll',read,{passive:true});
  addEventListener('resize',function(){size();read()});
