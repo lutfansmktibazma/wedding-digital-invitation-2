@@ -6,7 +6,7 @@
 <title>Walimatulurus Allesya & Haikal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cormorant+SC:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Cormorant+Garamond:ital,wght@1,500&family=Cormorant+SC:wght@500;600&family=Pinyon+Script&display=swap">
 <style>
 :root{--logo:url(images/logo.webp);--maroon:#6b1a2b;--ivory:#f7f1e8;--pink:#e8b4bc;--gold:#c9a24f;--ink:#2f3a35;--outside:#0b0809;box-sizing:border-box}
 *{box-sizing:border-box;margin:0}
@@ -20,8 +20,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 #cp{will-change:opacity,top,left,width}
 #wl{position:absolute;left:40.4%;top:15%;width:19.2%;aspect-ratio:489/520;filter:drop-shadow(0 1px 1.5px rgba(90,50,10,.55)) drop-shadow(0 3px 6px rgba(90,50,10,.25));opacity:.96}
 .lg{background:var(--logo) center/contain no-repeat;display:block}
-
-/* Hordeng Maroon */
+/* hordeng maroon */
 .drape{position:absolute;top:0;bottom:0;width:57%;z-index:3;pointer-events:none;will-change:transform;background:#5a0713;overflow:hidden}
 .drape svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .drape::after{content:"";position:absolute;top:0;bottom:0;width:26px;background:linear-gradient(90deg,rgba(25,0,4,0),rgba(25,0,4,.4))}
@@ -29,66 +28,43 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 .drape.l::after{right:0}
 .drape.r{right:0;transform-origin:100% 50%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,1.8% 84%,4.8% 66%,6.8% 47%,5% 30%,1.6% 14%)}
 .drape.r::after{left:0;transform:scaleX(-1)}
-
-/* Wadah Teks */
-.tx{position:absolute;left:0;right:0;top:20%;z-index:4;padding:44px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;
+/* teks */
+.tx{position:absolute;left:0;right:0;top:20%;z-index:4;padding:56px 26px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;
  background:radial-gradient(ellipse closest-side at 50% 50%,rgba(255,255,255,.93),rgba(255,255,255,.7) 50%,rgba(255,255,255,0) 100%)}
 .tx.dark{background:none;color:var(--ivory)}
 .tx.full{top:0;bottom:0;justify-content:center}
-
-/* Scene 0: Cover */
-.cover-hint{position:absolute;bottom:calc(54px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;pointer-events:none}
-.hint-text{font-family:"Cormorant SC",Georgia,serif;font-size:12.5px;letter-spacing:.25em;text-transform:uppercase;color:var(--ivory);font-weight:600}
-
-/* Scene 1 & 5: Pembuka */
-.sc-sub{font-family:"Cormorant SC",Georgia,serif;font-size:14px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink);font-weight:600;line-height:1.2}
-.name-hero{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:52px;line-height:1;letter-spacing:.05em;color:var(--ink);font-weight:600}
-.amp-hero{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:26px;line-height:1.1;color:var(--ink);opacity:.85;margin:4px 0}
-.date-hero{font-family:"Cormorant Garamond",Georgia,serif;font-size:17px;letter-spacing:.12em;color:var(--ink);font-weight:500;line-height:1.2}
-
-/* Scene 2: Jemputan */
-.ar{font-family:"Amiri","Aref Ruqaa",serif;font-size:27px;line-height:1.45;color:var(--ink);margin-bottom:2px}
-.sc-cap{font-family:"Cormorant SC",Georgia,serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);opacity:.85;font-weight:600;line-height:1.2}
-.sc-lead{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.6;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);font-weight:600}
-.sc-guest{font-family:"Cormorant SC",Georgia,serif;font-size:13px;line-height:1.55;letter-spacing:.11em;text-transform:uppercase;color:var(--ink);font-weight:700}
-.sc-event{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.6;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);font-weight:600}
-.name-inline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:36px;line-height:1.05;letter-spacing:.05em;color:var(--ink);font-weight:600;white-space:nowrap}
-.amp-inline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:26px;font-weight:400;color:var(--ink);opacity:.85}
-
-/* Scene 3: Butiran Majlis */
-.it-label{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:21px;color:var(--ink);font-weight:600;line-height:1.2;letter-spacing:.02em}
-.date-large{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;letter-spacing:.04em;color:var(--ink);font-weight:600;line-height:1.2}
-.sc-time{font-family:"Cormorant SC",Georgia,serif;font-size:11.5px;line-height:1.6;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);opacity:.88;font-weight:600}
-.venue-title{font-family:"Cormorant SC",Georgia,serif;font-size:19px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);font-weight:700;line-height:1.2}
-.sc-venue{font-family:"Cormorant SC",Georgia,serif;font-size:11.5px;line-height:1.6;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);opacity:.88;font-weight:600;max-width:320px}
-.gap{height:10px}
-.btns{display:flex;gap:14px;justify-content:center;margin-top:8px}
-.btn{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;letter-spacing:.06em;font-size:15px;background:#5a0713;color:#f7f1e8;border:none;padding:7px 22px;border-radius:30px;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 2px 8px rgba(90,7,19,.25);transition:background .2s,transform .2s}
-.btn:hover{background:#6e0c1a;transform:translateY(-1px)}
+.lbl{font-size:17px;letter-spacing:.08em;line-height:1.2}
+.cap{font-size:14px;letter-spacing:.05em;line-height:1.35;max-width:310px}
+.date{font-size:20px;letter-spacing:.06em;line-height:1.25}
+.name{font-family:"Pinyon Script",cursive;font-weight:400;font-size:52px;line-height:1.02;color:var(--ink)}
+.name.m{font-size:46px}.name.s{font-size:30px;line-height:1.12}
+.amp{font-family:"Pinyon Script",cursive;font-weight:400;font-size:30px;line-height:1}
+.scr{font-family:"Pinyon Script",cursive;font-weight:400;font-size:25px;line-height:1.15;margin-top:8px}
+.ar{font-family:"Aref Ruqaa",serif;font-weight:400;font-size:28px;line-height:1.5}
+.ital{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:16px;line-height:1.4}
+.gap{height:8px}
+.hint{position:absolute;bottom:calc(5% + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;z-index:4;font-size:13px;letter-spacing:.2em;color:var(--ivory);animation:nudge 1.8s ease-in-out infinite;pointer-events:none}
+@keyframes nudge{50%{transform:translateY(6px)}}
+.btns{display:flex;gap:10px;justify-content:center;margin-top:6px}
+.btn,button{font-family:inherit;font-weight:600;letter-spacing:.14em;font-size:13px;background:var(--maroon);color:var(--ivory);border:1px solid var(--gold);padding:10px 20px;border-radius:40px;cursor:pointer;text-decoration:none;display:inline-block}
 .btn:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-
-/* Countdown cards */
-.cd{display:flex;justify-content:center;gap:8px;margin-top:12px}
-.cd div{width:56px;padding:7px 4px 6px;border:1px solid rgba(201,162,79,.55);border-radius:3px;background:rgba(255,255,255,.88);box-shadow:0 2px 6px rgba(0,0,0,.04)}
-.cd b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;color:var(--maroon);line-height:1}
-.cd span{display:block;font-family:"Cormorant SC",Georgia,serif;font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);opacity:.85;margin-top:4px;font-weight:600}
-
-/* Scene 4: Doa */
-.doa-title{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:35px;letter-spacing:.04em;color:var(--ink);font-weight:600;line-height:1.15}
-.doa-body{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.75;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);font-weight:600;max-width:330px}
-.doa-latin{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:17px;line-height:1.45;color:var(--ink);letter-spacing:.02em}
-
-/* Footer & Controls */
-.foot{background:#f6f2ea;color:#8c857b;text-align:center;font-family:"Cormorant SC","Cormorant Garamond",Georgia,serif;font-weight:600;font-size:11.5px;letter-spacing:.05em;line-height:1.3;padding:22px 16px calc(22px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(201,162,79,.2)}
-#mus{position:absolute;right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:40px;height:40px;padding:0;border-radius:50%;z-index:6;display:grid;place-items:center;background:rgba(247,241,232,.82);border:1px solid rgba(154,27,48,.35);color:#7c1020;opacity:0;pointer-events:none;transition:opacity .6s;cursor:pointer}
+.cd{display:flex;justify-content:center;gap:8px;margin-top:8px}
+.cd div{width:56px;padding:6px 0;border:1px solid var(--gold);border-radius:3px;background:rgba(255,255,255,.7)}
+.cd b{display:block;font-size:20px;font-weight:600;color:var(--maroon)}.cd span{font-size:12px;letter-spacing:.08em}
+.sub{font-family:"Pinyon Script",cursive;font-weight:400;font-size:28px;line-height:1.15;color:var(--ink)}
+.orn{display:flex;align-items:center;gap:8px;width:120px}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--gold)}
+.orn i{width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
+.foot{background:#f6f2ea;color:#8c857b;text-align:center;font-family:"Cormorant SC","Cormorant Garamond",Georgia,serif;font-weight:600;font-size:11.5px;letter-spacing:.05em;line-height:1.3;padding:28px 16px calc(28px + env(safe-area-inset-bottom,0px))}
+#mus{position:absolute;right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:40px;height:40px;padding:0;border-radius:50%;z-index:6;display:grid;place-items:center;background:rgba(247,241,232,.82);border:1px solid rgba(154,27,48,.35);color:#7c1020;opacity:0;pointer-events:none;transition:opacity .6s}
 #mus.on{opacity:1;pointer-events:auto}
 #mus svg{width:20px;height:20px}
 #mus .x{display:none}#mus.off .w{display:none}#mus.off .x{display:block}
-#arrow{position:absolute;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:28px;height:32px;margin-left:-14px;z-index:6;pointer-events:none;color:#f7f1e8;transition:color .6s,opacity .3s;animation:bob 1.9s ease-in-out infinite}
+#arrow{position:absolute;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:30px;height:34px;margin-left:-15px;z-index:6;pointer-events:none;color:#f7f1e8;transition:color .6s,opacity .3s;animation:bob 1.9s ease-in-out infinite}
 #arrow.dk{color:#7c1020;filter:drop-shadow(0 0 4px rgba(255,255,255,.9))}
 #arrow svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
-@media (prefers-reduced-motion:reduce){#arrow{animation:none}}
+@media (prefers-reduced-motion:reduce){#arrow{animation:none}.hint{animation:none}}
 </style>
 </head>
 <body>
@@ -104,42 +80,38 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
  <div id="arrow" aria-hidden="true"><svg viewBox="0 0 24 28"><path d="M5 6l7 7 7-7"/><path d="M5 14l7 7 7-7" opacity=".55"/></svg></div>
  <button type="button" id="mus" aria-label="Matikan musik" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path class="w" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/><path class="x" d="M16 9.5l5 5M21 9.5l-5 5"/></svg></button>
  <div class="drape l" id="dl"></div><div class="drape r" id="dr"></div>
- 
+
  <!-- 0 cover -->
- <div class="tx dark full" id="coverTx" style="cursor:pointer">
-  <p class="sc-sub" style="color:var(--ivory); letter-spacing:.25em">Raikan Cinta</p>
-  <div class="lg" style="width:200px;height:212px;margin:12px 0 8px" role="img" aria-label="Monogram A dan H"></div>
-  <p class="date-hero" style="font-size:18px; color:var(--ivory); letter-spacing:.12em">30 Disember 2026</p>
-  <div class="cover-hint">
-   <p class="hint-text">Skrol Ke Bawah</p>
-  </div>
+ <div class="tx dark full">
+  <p class="lbl">Raikan Cinta</p>
+  <div class="lg" style="width:200px;height:212px;margin:10px 0 6px" role="img" aria-label="Monogram A dan H"></div>
+  <p class="date" style="font-size:18px">30 Disember 2026</p>
+  <p class="hint">Skrol Ke Bawah ↓</p>
  </div>
  <!-- 1 pembuka -->
- <div class="tx" style="top:19%">
-  <p class="sc-sub">Raikan Cinta</p>
-  <p class="name-hero" style="margin-top:14px">Allesya</p>
-  <p class="amp-hero">&amp;</p>
-  <p class="name-hero">Haikal</p>
-  <p class="date-hero" style="margin-top:14px">30 Dis 2026</p>
+ <div class="tx" style="top:20%">
+  <p class="lbl">Raikan Cinta</p>
+  <p class="name" style="margin-top:6px">Allesya</p><p class="amp">&amp;</p><p class="name">Haikal</p>
+  <p class="cap" style="margin-top:8px;font-size:15px">30 Dis 2026</p>
  </div>
  <!-- 2 jemputan -->
- <div class="tx" style="top:12%">
+ <div class="tx" style="top:14%">
   <p class="ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
-  <p class="sc-cap" style="margin-bottom:14px">Bismillahirrahmanirrahim</p>
-  <p class="sc-lead">Dengan penuh rasa syukur,<br>kami ingin menjemput</p>
-  <p class="sc-guest" style="margin-top:10px">Dato’ / Datin / Tuan / Puan / Encik / Cik<br>&amp; Sekeluarga ke</p>
-  <p class="sc-event" style="margin-top:10px">Majlis Perkahwinan<br>Anakanda Kami</p>
-  <p class="name-inline" style="margin-top:16px">Allesya <span class="amp-inline">&amp;</span> Haikal</p>
+  <p class="cap">Bismillahirrahmanirrahim</p>
+  <p class="cap" style="margin-top:6px">Dengan penuh rasa syukur, kami ingin menjemput</p>
+  <p class="cap" style="margin-top:4px">Dato' / Datin / Tuan / Puan / Encik / Cik<br>&amp; Sekeluarga ke</p>
+  <p class="cap" style="margin-top:4px">Majlis Perkahwinan Anakanda Kami</p>
+  <p class="name m" style="margin-top:8px">Allesya <span class="amp" style="font-size:26px">&amp;</span> Haikal</p>
  </div>
  <!-- 3 butiran majlis -->
- <div class="tx" style="top:9%">
-  <p class="it-label">Pada</p>
-  <p class="date-large" style="margin-top:4px">Rabu, 30 Disember 2026</p>
-  <p class="sc-time" style="margin-top:4px">20 Rejab 1448H<br>12:00 Tengah Hari – 5:00 Petang</p>
-  <p class="it-label" style="margin-top:14px">Bertempat di</p>
-  <p class="venue-title" style="margin-top:4px">Dewan Istiqlal</p>
-  <p class="sc-venue" style="margin-top:4px">Masjid Tengku Sharafudin Badlishah<br>Pulau Kijang, 06300 Kuala Nerang, Kedah</p>
-  <p class="it-label" style="margin-top:14px">Peta Lokasi</p>
+ <div class="tx" style="top:11%">
+  <p class="scr" style="margin:0">Pada</p>
+  <p class="date">Rabu, 30 Disember 2026</p>
+  <p class="cap">20 Rejab 1448H<br>12:00 Tengah Hari – 5:00 Petang</p>
+  <p class="scr" style="margin-top:16px">Bertempat di</p>
+  <p class="cap" style="font-size:17px">Dewan Istiqlal</p>
+  <p class="cap">Masjid Tengku Sharafudin Badlishah<br>Pulau Kijang, 06300 Kuala Nerang, Kedah</p>
+  <p class="scr" style="margin-top:14px">Peta Lokasi</p>
   <div class="btns">
    <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dewan+Istiqlal+Masjid+Tengku+Sharafudin+Badlishah+Pulau+Kijang+Kuala+Nerang+Kedah">Google Maps</a>
    <a class="btn" target="_blank" rel="noopener" href="https://waze.com/ul?q=Masjid+Tengku+Sharafudin+Badlishah+Pulau+Kijang+Kuala+Nerang&navigate=yes">Waze</a>
@@ -147,22 +119,19 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   <div class="cd" id="cd"></div>
  </div>
  <!-- 4 doa -->
- <div class="tx" style="top:13%">
-  <p class="doa-title">Doa Buat Pengantin</p>
-  <div class="gap" style="height:12px"></div>
-  <p class="doa-body">Ya Allah, Ya Rahman, Ya Rahim,<br>berkatilah perkahwinan ini, limpahkanlah<br>rahmat dan kasih sayang-Mu kepada mereka,<br>serta satukanlah hati mereka dalam kebaikan.</p>
-  <div class="gap" style="height:12px"></div>
-  <p class="doa-body">Semoga rumah tangga yang dibina sentiasa<br>dipenuhi sakinah, mawaddah dan rahmah,<br>dimurahkan rezeki, dikurniakan zuriat yang<br>soleh dan solehah, serta kekal bersama dalam<br>cinta dan kebahagiaan hingga ke syurga.</p>
-  <div class="gap" style="height:12px"></div>
-  <p class="doa-latin">Barakallahu laka wa baraka ‘alaika wa jama‘a<br>bainakuma fii khair.</p>
+ <div class="tx" style="top:15%">
+  <p class="name m" style="font-size:44px">Doa Buat Pengantin</p>
+  <div class="gap"></div>
+  <p class="cap">Ya Allah, Ya Rahman, Ya Rahim,<br>berkatilah perkahwinan ini, limpahkanlah rahmat dan kasih sayang-Mu kepada mereka, serta satukanlah hati mereka dalam kebaikan.</p>
+  <div class="gap"></div>
+  <p class="cap">Semoga rumah tangga yang dibina sentiasa dipenuhi sakinah, mawaddah dan rahmah, dimurahkan rezeki, dikurniakan zuriat yang soleh dan solehah, serta kekal bersama dalam cinta dan kebahagiaan hingga ke syurga.</p>
+  <p class="ital" style="margin-top:8px">Barakallahu laka wa baraka 'alaika wa jama'a bainakuma fii khair.</p>
  </div>
  <!-- 5 penutup (ulang pembuka) -->
- <div class="tx" style="top:19%">
-  <p class="sc-sub">Raikan Cinta</p>
-  <p class="name-hero" style="margin-top:14px">Allesya</p>
-  <p class="amp-hero">&amp;</p>
-  <p class="name-hero">Haikal</p>
-  <p class="date-hero" style="margin-top:14px">30 Dis 2026</p>
+ <div class="tx" style="top:20%">
+  <p class="lbl">Raikan Cinta</p>
+  <p class="name" style="margin-top:6px">Allesya</p><p class="amp">&amp;</p><p class="name">Haikal</p>
+  <p class="cap" style="margin-top:8px;font-size:15px">30 Dis 2026</p>
  </div>
 </div>
 </div>
@@ -182,8 +151,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
  function ez(f){return f*f*(3-2*f)}
  function io3(p){return p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2}
  function lp(a,b,f){return a+(b-a)*f}
-
- // Hordeng: lipatan kain realistis dengan pencahayaan dinamis
+ // hordeng: lipatan kain dengan lebar dan bayangan acak, sedikit melebar ke bawah
  function drapeSVG(seed,flip,id){
   var s=seed;function r(){s=(s*9301+49297)%233280;return s/233280}
   var n=9,tp=[],bt=[],i,d='',g='',po='';
@@ -200,66 +168,37 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   return '<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs>'+g+'</defs><g'+(flip?' transform="translate(100 0) scale(-1 1)"':'')+'><rect width="100" height="100" fill="#5a0713"/>'+po+th+'<rect width="100" height="100" fill="url(#'+id+'v)"/></g></svg>';
  }
  dl.innerHTML=drapeSVG(11,false,'dl');dr.innerHTML=drapeSVG(47,true,'dr');
-
- function size(){
-  SW=st.clientWidth;SH=st.clientHeight;H=SH;W=H*RW;if(W<SW){W=SW;H=W/RW}
-  wd.style.width=W+'px';wd.style.height=H+'px';
- }
+ function size(){SW=st.clientWidth;SH=st.clientHeight;H=SH;W=H*RW;if(W<SW){W=SW;H=W/RW}
+  wd.style.width=W+'px';wd.style.height=H+'px'}
  function yFor(t){return t/(N-1)*(track.offsetHeight-innerHeight)}
- 
- function read(){
-  var h=track.offsetHeight-innerHeight;
-  tgt=cl(-track.getBoundingClientRect().top/h)*(N-1);
-  if(tgt>0.02&&!openDir){
-   openDir=1;
-   if(calm)openP=1;else autoScroll();
-   playMusic();
-  } else if(tgt<0.008&&openDir){
-   openDir=0;
-   if(calm)openP=0;
-  }
- }
-
- // Geser otomatis mulus ke adegan pembuka setelah tirai terbuka
+ function read(){var h=track.offsetHeight-innerHeight;tgt=cl(-track.getBoundingClientRect().top/h)*(N-1);
+  if(tgt>0.03&&!openDir){openDir=1;if(calm)openP=1;else autoScroll();playMusic()}
+  else if(tgt<0.012&&openDir){openDir=0;if(calm)openP=0}}
+ // geser otomatis halus ke adegan judul setelah hordeng mulai terbuka
  function autoScroll(){
   var y0=scrollY,y1=yFor(1);if(y0>=y1*0.9)return;
-  var t0=performance.now(),D=2200;cancelAnimationFrame(autoRAF);
+  var t0=performance.now(),D=2300;cancelAnimationFrame(autoRAF);
   function stop(){cancelAnimationFrame(autoRAF);removeEventListener('wheel',stop);removeEventListener('touchstart',stop);removeEventListener('keydown',stop)}
   addEventListener('wheel',stop,{passive:true});addEventListener('touchstart',stop,{passive:true});addEventListener('keydown',stop);
   (function stepA(n){var p=cl((n-t0)/D);scrollTo(0,y0+(y1-y0)*io3(p));if(p<1)autoRAF=requestAnimationFrame(stepA);else stop()})(t0);
  }
-
- function startOpening(){
-  playMusic();
-  if(!openDir){
-   openDir=1;
-   if(calm)openP=1;else autoScroll();
-  }
- }
- var coverTx=document.getElementById('coverTx');
- if(coverTx){coverTx.onclick=startOpening}
- st.addEventListener('click',function(e){if(!openDir)startOpening()});
-
  function draw(t,c){
   var i=Math.min(N-2,Math.floor(t)),f=ez(cl(t-i)),a=P[i],b=P[i+1];
   var s=lp(a.s,b.s,f),fx=lp(a.x,b.x,f),fy=lp(a.y,b.y,f);
   var x0=SW/2-fx*W*s,y0=SH/2-fy*H*s;
   x0=Math.min(0,Math.max(SW-W*s,x0));y0=Math.min(0,Math.max(SH-H*s,y0));
   wd.style.transform='translate3d('+x0.toFixed(1)+'px,'+y0.toFixed(1)+'px,0) scale('+s.toFixed(4)+')';
-
-  // Hordeng: membuka ke samping kiri dan kanan
+  // hordeng: terkumpul ke tepi sambil bergoyang halus, lalu keluar layar
   var k=1-.6*c,sk=Math.sin(Math.PI*c)*2.4;
   dl.style.transform='translateX('+(-c*108).toFixed(2)+'%) skewX('+sk.toFixed(2)+'deg) scaleX('+k.toFixed(4)+')';
   dr.style.transform='translateX('+(c*108).toFixed(2)+'%) skewX('+(-sk).toFixed(2)+'deg) scaleX('+k.toFixed(4)+')';
   dl.style.visibility=dr.style.visibility=c>=.999?'hidden':'visible';
   mus.className=(c>.6?'on':'')+(muted?' off':'');
   arrow.style.opacity=1-cl((t-4.3)/0.5);arrow.className=c>.5?'dk':'';
-
   var ap=cl((t-0.35)/0.95),a2=ez(ap),out=1-cl((t-2.55)/0.4),inn=cl((t-4.5)/0.4);
   var hN=lp(.22,.37,a2),fyF=lp(.775,.93,a2),wN=CR*hN,bob=ap>0&&ap<1?Math.sin(ap*24)*.0035:0;
   cp.style.width=(wN*100)+'%';cp.style.left=((.5-wN/2)*100)+'%';cp.style.top=((fyF-hN+bob)*100)+'%';
   cp.style.opacity=t<4?a2*out:inn;
-
   for(var j=0;j<tx.length;j++){
    var d=Math.abs(t-j),op=j===0?1-cl(c*3.2):cl(1.7-d*3.2);
    tx[j].style.opacity=op;
@@ -269,7 +208,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
  }
 
  var arrow=document.getElementById('arrow');
- // ---- Musik ----
+ // ---- musik: fade in halus, volume tetap pelan, loop mulus ----
  var bgm=document.getElementById('bgm'),mus=document.getElementById('mus'),mv=0,mT=0,muted=false,wantPlay=false;
  function playMusic(){if(muted)return;wantPlay=true;mT=1;var p=bgm.play();if(p&&p.catch)p.catch(function(){armGesture()})}
  function armGesture(){function go(){['pointerup','touchend','click','keydown'].forEach(function(e){removeEventListener(e,go,true)});if(wantPlay&&!muted){mT=1;bgm.play().catch(function(){})}}
@@ -278,7 +217,8 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   if(mv===0&&mT===0&&!bgm.paused)bgm.pause()}
  document.addEventListener('visibilitychange',function(){if(document.hidden){bgm.pause()}else if(wantPlay&&!muted){bgm.play().catch(function(){})}});
  mus.onclick=function(){muted=!muted;mus.setAttribute('aria-pressed',String(!muted));mus.setAttribute('aria-label',muted?'Hidupkan musik':'Matikan musik');if(muted){mT=0}else{playMusic()}};
-
+ // Buka tirai dengan sentuhan/scroll, tanpa button
+ st.addEventListener('click',function(){if(!openDir){openDir=1;if(calm)openP=1;else autoScroll();playMusic()}},{once:true});
  function loop(ts){
   var dt=last?Math.min(.05,(ts-last)/1000):0;last=ts;
   fadeStep(dt);
@@ -289,7 +229,6 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
  addEventListener('resize',function(){size();read()});
  size();read();if(openDir)openP=1;cur=tgt;draw(cur,io3(openP));requestAnimationFrame(loop);
 
- // Countdown Timer
  var t0=new Date('2026-12-30T12:00:00+08:00').getTime(),cd=document.getElementById('cd');
  function tick(){var d=t0-Date.now();if(d<=0){cd.innerHTML='';return}
   var v=[[Math.floor(d/864e5),'hari'],[Math.floor(d%864e5/36e5),'jam'],[Math.floor(d%36e5/6e4),'minit'],[Math.floor(d%6e4/1e3),'saat']];
