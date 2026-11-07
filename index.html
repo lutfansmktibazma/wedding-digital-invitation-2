@@ -20,7 +20,8 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 #cp{will-change:opacity,top,left,width}
 #wl{position:absolute;left:40.4%;top:15%;width:19.2%;aspect-ratio:489/520;filter:drop-shadow(0 1px 1.5px rgba(90,50,10,.55)) drop-shadow(0 3px 6px rgba(90,50,10,.25));opacity:.96}
 .lg{background:var(--logo) center/contain no-repeat;display:block}
-/* hordeng maroon */
+
+/* Hordeng Maroon */
 .drape{position:absolute;top:0;bottom:0;width:57%;z-index:3;pointer-events:none;will-change:transform;background:#5a0713;overflow:hidden}
 .drape svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .drape::after{content:"";position:absolute;top:0;bottom:0;width:26px;background:linear-gradient(90deg,rgba(25,0,4,0),rgba(25,0,4,.4))}
@@ -28,57 +29,62 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 .drape.l::after{right:0}
 .drape.r{right:0;transform-origin:100% 50%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,1.8% 84%,4.8% 66%,6.8% 47%,5% 30%,1.6% 14%)}
 .drape.r::after{left:0;transform:scaleX(-1)}
-/* teks */
-.tx{position:absolute;left:0;right:0;top:20%;z-index:4;padding:48px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;
+
+/* Wadah Teks */
+.tx{position:absolute;left:0;right:0;top:20%;z-index:4;padding:44px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;
  background:radial-gradient(ellipse closest-side at 50% 50%,rgba(255,255,255,.93),rgba(255,255,255,.7) 50%,rgba(255,255,255,0) 100%)}
 .tx.dark{background:none;color:var(--ivory)}
 .tx.full{top:0;bottom:0;justify-content:center}
 
+/* Scene 0: Cover */
+.cover-hint{position:absolute;bottom:calc(54px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;pointer-events:none}
+.hint-text{font-family:"Cormorant SC",Georgia,serif;font-size:12.5px;letter-spacing:.25em;text-transform:uppercase;color:var(--ivory);font-weight:600}
+
 /* Scene 1 & 5: Pembuka */
-.sc-sub{font-family:"Cormorant SC",Georgia,serif;font-size:14px;letter-spacing:.25em;text-transform:uppercase;color:#33292c;font-weight:600;line-height:1.2}
-.name-hero{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:52px;line-height:1;letter-spacing:.05em;color:#2c2024;font-weight:600}
-.amp-hero{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:26px;line-height:1.1;color:#5a484d;margin:4px 0}
-.date-hero{font-family:"Cormorant Garamond",Georgia,serif;font-size:17px;letter-spacing:.12em;color:#33292c;font-weight:500;line-height:1.2}
+.sc-sub{font-family:"Cormorant SC",Georgia,serif;font-size:14px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink);font-weight:600;line-height:1.2}
+.name-hero{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:52px;line-height:1;letter-spacing:.05em;color:var(--ink);font-weight:600}
+.amp-hero{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:26px;line-height:1.1;color:var(--ink);opacity:.85;margin:4px 0}
+.date-hero{font-family:"Cormorant Garamond",Georgia,serif;font-size:17px;letter-spacing:.12em;color:var(--ink);font-weight:500;line-height:1.2}
 
 /* Scene 2: Jemputan */
-.ar{font-family:"Amiri","Aref Ruqaa",serif;font-size:27px;line-height:1.45;color:#2c2024;margin-bottom:2px}
-.sc-cap{font-family:"Cormorant SC",Georgia,serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#554549;font-weight:600;line-height:1.2}
-.sc-lead{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.6;letter-spacing:.12em;text-transform:uppercase;color:#554549;font-weight:600}
-.sc-guest{font-family:"Cormorant SC",Georgia,serif;font-size:13px;line-height:1.55;letter-spacing:.11em;text-transform:uppercase;color:#241b1d;font-weight:700}
-.sc-event{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.6;letter-spacing:.12em;text-transform:uppercase;color:#554549;font-weight:600}
-.name-inline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:36px;line-height:1.05;letter-spacing:.05em;color:#2c1e22;font-weight:600;white-space:nowrap}
-.amp-inline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:26px;font-weight:400;color:#5a484d}
+.ar{font-family:"Amiri","Aref Ruqaa",serif;font-size:27px;line-height:1.45;color:var(--ink);margin-bottom:2px}
+.sc-cap{font-family:"Cormorant SC",Georgia,serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);opacity:.85;font-weight:600;line-height:1.2}
+.sc-lead{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.6;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);font-weight:600}
+.sc-guest{font-family:"Cormorant SC",Georgia,serif;font-size:13px;line-height:1.55;letter-spacing:.11em;text-transform:uppercase;color:var(--ink);font-weight:700}
+.sc-event{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.6;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);font-weight:600}
+.name-inline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:36px;line-height:1.05;letter-spacing:.05em;color:var(--ink);font-weight:600;white-space:nowrap}
+.amp-inline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:26px;font-weight:400;color:var(--ink);opacity:.85}
 
 /* Scene 3: Butiran Majlis */
-.it-label{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:21px;color:#6b1a2b;font-weight:600;line-height:1.2;letter-spacing:.02em}
-.date-large{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;letter-spacing:.04em;color:#241b1d;font-weight:600;line-height:1.2}
-.sc-time{font-family:"Cormorant SC",Georgia,serif;font-size:11.5px;line-height:1.6;letter-spacing:.1em;text-transform:uppercase;color:#4f4044;font-weight:600}
-.venue-title{font-family:"Cormorant SC",Georgia,serif;font-size:19px;letter-spacing:.1em;text-transform:uppercase;color:#241b1d;font-weight:700;line-height:1.2}
-.sc-venue{font-family:"Cormorant SC",Georgia,serif;font-size:11.5px;line-height:1.6;letter-spacing:.08em;text-transform:uppercase;color:#4f4044;font-weight:600;max-width:320px}
-
-/* Scene 4: Doa */
-.doa-title{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:35px;letter-spacing:.04em;color:#2c1e22;font-weight:600;line-height:1.15}
-.doa-body{font-family:"Cormorant SC",Georgia,serif;font-size:12.5px;line-height:1.75;letter-spacing:.09em;text-transform:uppercase;color:#3a2e32;font-weight:600;max-width:330px}
-
+.it-label{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:21px;color:var(--ink);font-weight:600;line-height:1.2;letter-spacing:.02em}
+.date-large{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;letter-spacing:.04em;color:var(--ink);font-weight:600;line-height:1.2}
+.sc-time{font-family:"Cormorant SC",Georgia,serif;font-size:11.5px;line-height:1.6;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);opacity:.88;font-weight:600}
+.venue-title{font-family:"Cormorant SC",Georgia,serif;font-size:19px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);font-weight:700;line-height:1.2}
+.sc-venue{font-family:"Cormorant SC",Georgia,serif;font-size:11.5px;line-height:1.6;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);opacity:.88;font-weight:600;max-width:320px}
 .gap{height:10px}
 .btns{display:flex;gap:14px;justify-content:center;margin-top:8px}
-.btn{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;letter-spacing:.06em;font-size:15px;background:#5a0713;color:#f7f1e8;border:none;padding:7px 22px;border-radius:30px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;letter-spacing:.06em;font-size:15px;background:#5a0713;color:#f7f1e8;border:none;padding:7px 22px;border-radius:30px;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 2px 8px rgba(90,7,19,.25);transition:background .2s,transform .2s}
+.btn:hover{background:#6e0c1a;transform:translateY(-1px)}
 .btn:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
 /* Countdown cards */
-.cd{display:flex;justify-content:center;gap:8px;margin-top:10px}
-.cd div{width:56px;padding:6px 0;border:1px solid rgba(196,178,154,.7);border-radius:3px;background:rgba(255,255,255,.7)}
-.cd b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;font-weight:600;color:var(--maroon);line-height:1}
-.cd span{display:block;font-family:"Cormorant SC",Georgia,serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);opacity:.8;margin-top:3px;font-weight:600}
+.cd{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.cd div{width:56px;padding:7px 4px 6px;border:1px solid rgba(201,162,79,.55);border-radius:3px;background:rgba(255,255,255,.88);box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.cd b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;color:var(--maroon);line-height:1}
+.cd span{display:block;font-family:"Cormorant SC",Georgia,serif;font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);opacity:.85;margin-top:4px;font-weight:600}
 
-.foot{background:#f6f2ea;color:#8c857b;text-align:center;font-family:"Cormorant SC","Cormorant Garamond",Georgia,serif;font-weight:600;font-size:11.5px;letter-spacing:.05em;line-height:1.3;padding:8px 16px calc(8px + env(safe-area-inset-bottom,0px))}
-.btn.open{background:transparent;color:var(--ivory);border:1px solid var(--gold);padding:13px 30px;margin-top:26px;font-family:"Cormorant SC",Georgia,serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
-.btn.open:hover{background:rgba(255,255,255,.08)}
-#mus{position:absolute;right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:40px;height:40px;padding:0;border-radius:50%;z-index:6;display:grid;place-items:center;background:rgba(247,241,232,.82);border:1px solid rgba(154,27,48,.35);color:#7c1020;opacity:0;pointer-events:none;transition:opacity .6s}
+/* Scene 4: Doa */
+.doa-title{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-variant:small-caps;font-size:35px;letter-spacing:.04em;color:var(--ink);font-weight:600;line-height:1.15}
+.doa-body{font-family:"Cormorant SC",Georgia,serif;font-size:12px;line-height:1.75;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);font-weight:600;max-width:330px}
+.doa-latin{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:17px;line-height:1.45;color:var(--ink);letter-spacing:.02em}
+
+/* Footer & Controls */
+.foot{background:#f6f2ea;color:#8c857b;text-align:center;font-family:"Cormorant SC","Cormorant Garamond",Georgia,serif;font-weight:600;font-size:11.5px;letter-spacing:.05em;line-height:1.3;padding:22px 16px calc(22px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(201,162,79,.2)}
+#mus{position:absolute;right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:40px;height:40px;padding:0;border-radius:50%;z-index:6;display:grid;place-items:center;background:rgba(247,241,232,.82);border:1px solid rgba(154,27,48,.35);color:#7c1020;opacity:0;pointer-events:none;transition:opacity .6s;cursor:pointer}
 #mus.on{opacity:1;pointer-events:auto}
 #mus svg{width:20px;height:20px}
 #mus .x{display:none}#mus.off .w{display:none}#mus.off .x{display:block}
-#arrow{position:absolute;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:30px;height:34px;margin-left:-15px;z-index:6;pointer-events:none;color:#f7f1e8;transition:color .6s,opacity .3s;animation:bob 1.9s ease-in-out infinite}
+#arrow{position:absolute;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:28px;height:32px;margin-left:-14px;z-index:6;pointer-events:none;color:#f7f1e8;transition:color .6s,opacity .3s;animation:bob 1.9s ease-in-out infinite}
 #arrow.dk{color:#7c1020;filter:drop-shadow(0 0 4px rgba(255,255,255,.9))}
 #arrow svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
@@ -100,11 +106,13 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
  <div class="drape l" id="dl"></div><div class="drape r" id="dr"></div>
  
  <!-- 0 cover -->
- <div class="tx dark full">
-  <p class="sc-sub" style="color:var(--ivory); letter-spacing:.24em">Raikan Cinta</p>
-  <div class="lg" style="width:200px;height:212px;margin:10px 0 6px" role="img" aria-label="Monogram A dan H"></div>
+ <div class="tx dark full" id="coverTx" style="cursor:pointer">
+  <p class="sc-sub" style="color:var(--ivory); letter-spacing:.25em">Raikan Cinta</p>
+  <div class="lg" style="width:200px;height:212px;margin:12px 0 8px" role="img" aria-label="Monogram A dan H"></div>
   <p class="date-hero" style="font-size:18px; color:var(--ivory); letter-spacing:.12em">30 Disember 2026</p>
-  <button type="button" class="btn open" id="openBtn">Buka Undangan</button>
+  <div class="cover-hint">
+   <p class="hint-text">Skrol Ke Bawah</p>
+  </div>
  </div>
  <!-- 1 pembuka -->
  <div class="tx" style="top:19%">
@@ -139,12 +147,14 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   <div class="cd" id="cd"></div>
  </div>
  <!-- 4 doa -->
- <div class="tx" style="top:15%">
+ <div class="tx" style="top:13%">
   <p class="doa-title">Doa Buat Pengantin</p>
-  <div class="gap" style="height:14px"></div>
+  <div class="gap" style="height:12px"></div>
   <p class="doa-body">Ya Allah, Ya Rahman, Ya Rahim,<br>berkatilah perkahwinan ini, limpahkanlah<br>rahmat dan kasih sayang-Mu kepada mereka,<br>serta satukanlah hati mereka dalam kebaikan.</p>
-  <div class="gap" style="height:14px"></div>
+  <div class="gap" style="height:12px"></div>
   <p class="doa-body">Semoga rumah tangga yang dibina sentiasa<br>dipenuhi sakinah, mawaddah dan rahmah,<br>dimurahkan rezeki, dikurniakan zuriat yang<br>soleh dan solehah, serta kekal bersama dalam<br>cinta dan kebahagiaan hingga ke syurga.</p>
+  <div class="gap" style="height:12px"></div>
+  <p class="doa-latin">Barakallahu laka wa baraka ‘alaika wa jama‘a<br>bainakuma fii khair.</p>
  </div>
  <!-- 5 penutup (ulang pembuka) -->
  <div class="tx" style="top:19%">
@@ -172,7 +182,8 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
  function ez(f){return f*f*(3-2*f)}
  function io3(p){return p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2}
  function lp(a,b,f){return a+(b-a)*f}
- // hordeng: lipatan kain dengan lebar dan bayangan acak, sedikit melebar ke bawah
+
+ // Hordeng: lipatan kain realistis dengan pencahayaan dinamis
  function drapeSVG(seed,flip,id){
   var s=seed;function r(){s=(s*9301+49297)%233280;return s/233280}
   var n=9,tp=[],bt=[],i,d='',g='',po='';
@@ -189,37 +200,66 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   return '<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs>'+g+'</defs><g'+(flip?' transform="translate(100 0) scale(-1 1)"':'')+'><rect width="100" height="100" fill="#5a0713"/>'+po+th+'<rect width="100" height="100" fill="url(#'+id+'v)"/></g></svg>';
  }
  dl.innerHTML=drapeSVG(11,false,'dl');dr.innerHTML=drapeSVG(47,true,'dr');
- function size(){SW=st.clientWidth;SH=st.clientHeight;H=SH;W=H*RW;if(W<SW){W=SW;H=W/RW}
-  wd.style.width=W+'px';wd.style.height=H+'px'}
+
+ function size(){
+  SW=st.clientWidth;SH=st.clientHeight;H=SH;W=H*RW;if(W<SW){W=SW;H=W/RW}
+  wd.style.width=W+'px';wd.style.height=H+'px';
+ }
  function yFor(t){return t/(N-1)*(track.offsetHeight-innerHeight)}
- function read(){var h=track.offsetHeight-innerHeight;tgt=cl(-track.getBoundingClientRect().top/h)*(N-1);
-  if(tgt>0.03&&!openDir){openDir=1;if(calm)openP=1;else autoScroll();playMusic()}
-  else if(tgt<0.012&&openDir){openDir=0;if(calm)openP=0}}
- // geser otomatis halus ke adegan judul setelah hordeng mulai terbuka
+ 
+ function read(){
+  var h=track.offsetHeight-innerHeight;
+  tgt=cl(-track.getBoundingClientRect().top/h)*(N-1);
+  if(tgt>0.02&&!openDir){
+   openDir=1;
+   if(calm)openP=1;else autoScroll();
+   playMusic();
+  } else if(tgt<0.008&&openDir){
+   openDir=0;
+   if(calm)openP=0;
+  }
+ }
+
+ // Geser otomatis mulus ke adegan pembuka setelah tirai terbuka
  function autoScroll(){
   var y0=scrollY,y1=yFor(1);if(y0>=y1*0.9)return;
-  var t0=performance.now(),D=2300;cancelAnimationFrame(autoRAF);
+  var t0=performance.now(),D=2200;cancelAnimationFrame(autoRAF);
   function stop(){cancelAnimationFrame(autoRAF);removeEventListener('wheel',stop);removeEventListener('touchstart',stop);removeEventListener('keydown',stop)}
   addEventListener('wheel',stop,{passive:true});addEventListener('touchstart',stop,{passive:true});addEventListener('keydown',stop);
   (function stepA(n){var p=cl((n-t0)/D);scrollTo(0,y0+(y1-y0)*io3(p));if(p<1)autoRAF=requestAnimationFrame(stepA);else stop()})(t0);
  }
+
+ function startOpening(){
+  playMusic();
+  if(!openDir){
+   openDir=1;
+   if(calm)openP=1;else autoScroll();
+  }
+ }
+ var coverTx=document.getElementById('coverTx');
+ if(coverTx){coverTx.onclick=startOpening}
+ st.addEventListener('click',function(e){if(!openDir)startOpening()});
+
  function draw(t,c){
   var i=Math.min(N-2,Math.floor(t)),f=ez(cl(t-i)),a=P[i],b=P[i+1];
   var s=lp(a.s,b.s,f),fx=lp(a.x,b.x,f),fy=lp(a.y,b.y,f);
   var x0=SW/2-fx*W*s,y0=SH/2-fy*H*s;
   x0=Math.min(0,Math.max(SW-W*s,x0));y0=Math.min(0,Math.max(SH-H*s,y0));
   wd.style.transform='translate3d('+x0.toFixed(1)+'px,'+y0.toFixed(1)+'px,0) scale('+s.toFixed(4)+')';
-  // hordeng: terkumpul ke tepi sambil bergoyang halus, lalu keluar layar
+
+  // Hordeng: membuka ke samping kiri dan kanan
   var k=1-.6*c,sk=Math.sin(Math.PI*c)*2.4;
   dl.style.transform='translateX('+(-c*108).toFixed(2)+'%) skewX('+sk.toFixed(2)+'deg) scaleX('+k.toFixed(4)+')';
   dr.style.transform='translateX('+(c*108).toFixed(2)+'%) skewX('+(-sk).toFixed(2)+'deg) scaleX('+k.toFixed(4)+')';
   dl.style.visibility=dr.style.visibility=c>=.999?'hidden':'visible';
   mus.className=(c>.6?'on':'')+(muted?' off':'');
   arrow.style.opacity=1-cl((t-4.3)/0.5);arrow.className=c>.5?'dk':'';
+
   var ap=cl((t-0.35)/0.95),a2=ez(ap),out=1-cl((t-2.55)/0.4),inn=cl((t-4.5)/0.4);
   var hN=lp(.22,.37,a2),fyF=lp(.775,.93,a2),wN=CR*hN,bob=ap>0&&ap<1?Math.sin(ap*24)*.0035:0;
   cp.style.width=(wN*100)+'%';cp.style.left=((.5-wN/2)*100)+'%';cp.style.top=((fyF-hN+bob)*100)+'%';
   cp.style.opacity=t<4?a2*out:inn;
+
   for(var j=0;j<tx.length;j++){
    var d=Math.abs(t-j),op=j===0?1-cl(c*3.2):cl(1.7-d*3.2);
    tx[j].style.opacity=op;
@@ -229,7 +269,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
  }
 
  var arrow=document.getElementById('arrow');
- // ---- musik: fade in halus, volume tetap pelan, loop mulus ----
+ // ---- Musik ----
  var bgm=document.getElementById('bgm'),mus=document.getElementById('mus'),mv=0,mT=0,muted=false,wantPlay=false;
  function playMusic(){if(muted)return;wantPlay=true;mT=1;var p=bgm.play();if(p&&p.catch)p.catch(function(){armGesture()})}
  function armGesture(){function go(){['pointerup','touchend','click','keydown'].forEach(function(e){removeEventListener(e,go,true)});if(wantPlay&&!muted){mT=1;bgm.play().catch(function(){})}}
@@ -238,7 +278,7 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
   if(mv===0&&mT===0&&!bgm.paused)bgm.pause()}
  document.addEventListener('visibilitychange',function(){if(document.hidden){bgm.pause()}else if(wantPlay&&!muted){bgm.play().catch(function(){})}});
  mus.onclick=function(){muted=!muted;mus.setAttribute('aria-pressed',String(!muted));mus.setAttribute('aria-label',muted?'Hidupkan musik':'Matikan musik');if(muted){mT=0}else{playMusic()}};
- document.getElementById('openBtn').onclick=function(){playMusic();if(!openDir){openDir=1;if(calm)openP=1;else autoScroll()}};
+
  function loop(ts){
   var dt=last?Math.min(.05,(ts-last)/1000):0;last=ts;
   fadeStep(dt);
@@ -249,13 +289,14 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
  addEventListener('resize',function(){size();read()});
  size();read();if(openDir)openP=1;cur=tgt;draw(cur,io3(openP));requestAnimationFrame(loop);
 
+ // Countdown Timer
  var t0=new Date('2026-12-30T12:00:00+08:00').getTime(),cd=document.getElementById('cd');
  function tick(){var d=t0-Date.now();if(d<=0){cd.innerHTML='';return}
   var v=[[Math.floor(d/864e5),'hari'],[Math.floor(d%864e5/36e5),'jam'],[Math.floor(d%36e5/6e4),'minit'],[Math.floor(d%6e4/1e3),'saat']];
   cd.innerHTML=v.map(function(a){return '<div><b>'+a[0]+'</b><span>'+a[1]+'</span></div>'}).join('')}
  tick();setInterval(tick,1000);
 
- })();
+})();
 </script>
 </body>
 </html>
