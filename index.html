@@ -29,10 +29,9 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 .drape.r{right:0;transform-origin:100% 50%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,1.8% 84%,4.8% 66%,6.8% 47%,5% 30%,1.6% 14%)}
 .drape.r::after{left:0;transform:scaleX(-1)}
 /* teks */
-.tx{position:absolute;left:0;right:0;top:20%;z-index:4;padding:36px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;
- background:radial-gradient(ellipse 75% 65% at 50% 50%,rgba(255,255,255,.95) 0%,rgba(255,255,255,.82) 55%,rgba(255,255,255,0) 100%);
- text-shadow:0 1px 1px rgba(255,255,255,.6)}
-.tx.dark{background:none;color:var(--ivory);text-shadow:none}
+.tx{position:absolute;left:0;right:0;top:20%;z-index:4;padding:48px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;
+ background:radial-gradient(ellipse closest-side at 50% 50%,rgba(255,255,255,.93),rgba(255,255,255,.7) 50%,rgba(255,255,255,0) 100%)}
+.tx.dark{background:none;color:var(--ivory)}
 .tx.full{top:0;bottom:0;justify-content:center}
 
 /* Scene 1 & 5: Pembuka */
@@ -63,15 +62,14 @@ body{background:var(--outside);font-family:"Cormorant SC","Cormorant Garamond",G
 
 .gap{height:10px}
 .btns{display:flex;gap:14px;justify-content:center;margin-top:8px}
-.btn{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;letter-spacing:.06em;font-size:15px;background:#5a0713;color:#f7f1e8;border:none;padding:7px 22px;border-radius:30px;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 3px 8px rgba(90,7,19,.22);transition:transform .2s,background .2s}
-.btn:hover{background:#6f0c1b;transform:translateY(-1px)}
+.btn{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;letter-spacing:.06em;font-size:15px;background:#5a0713;color:#f7f1e8;border:none;padding:7px 22px;border-radius:30px;cursor:pointer;text-decoration:none;display:inline-block}
 .btn:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
 /* Countdown cards */
-.cd{display:flex;justify-content:center;gap:8px;margin-top:12px}
-.cd div{width:56px;padding:7px 4px 6px;border:1px solid rgba(196,178,154,.6);border-radius:3px;background:rgba(255,255,255,.88);box-shadow:0 2px 6px rgba(0,0,0,.05);backdrop-filter:blur(4px)}
-.cd b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;color:#6b1a2b;line-height:1}
-.cd span{display:block;font-family:"Cormorant SC",Georgia,serif;font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:#55484c;margin-top:4px;font-weight:600}
+.cd{display:flex;justify-content:center;gap:8px;margin-top:10px}
+.cd div{width:56px;padding:6px 0;border:1px solid rgba(196,178,154,.7);border-radius:3px;background:rgba(255,255,255,.7)}
+.cd b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;font-weight:600;color:var(--maroon);line-height:1}
+.cd span{display:block;font-family:"Cormorant SC",Georgia,serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);opacity:.8;margin-top:3px;font-weight:600}
 
 .foot{background:#f6f2ea;color:#8c857b;text-align:center;font-family:"Cormorant SC","Cormorant Garamond",Georgia,serif;font-weight:600;font-size:11.5px;letter-spacing:.05em;line-height:1.3;padding:8px 16px calc(8px + env(safe-area-inset-bottom,0px))}
 .btn.open{background:transparent;color:var(--ivory);border:1px solid var(--gold);padding:13px 30px;margin-top:26px;font-family:"Cormorant SC",Georgia,serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
